@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.AllStudents"
-            prefHeight="400.0" prefWidth="600.0" >
 
+<AnchorPane prefHeight="474.0" prefWidth="708.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AllStudents">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="28.0" layoutY="59.0" prefHeight="92.0" prefWidth="661.0" spacing="50.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="22000" textFill="#2a73ff">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Total alumnos" textFill="#222020" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="1500" textFill="#26bfbc">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Promedio General" textFill="#1e1b1b" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="1000" textFill="#fa5f7e">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Aprovados" textFill="#141212" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="780" textFill="#de0000">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Reprovados" textFill="#171717" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Label layoutX="48.0" layoutY="14.0" text="Registro de Estudiantes" textFill="#222523" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView layoutX="35.0" layoutY="164.0" prefHeight="310.0" prefWidth="639.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Grupo " />
+          <TableColumn prefWidth="75.0" text="No." />
+            <TableColumn prefWidth="150.0" text="Control" />
+            <TableColumn minWidth="0.0" prefWidth="261.0" text="Nombre" />
+            <TableColumn prefWidth="77.0" text="Promedio" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>
