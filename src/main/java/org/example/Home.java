@@ -1,2 +1,4 @@
-package org.example;public class Home {
+package org.example;
+
+public class Home {
 }
