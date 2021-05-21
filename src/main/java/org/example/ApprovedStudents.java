@@ -12,7 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
 
 
-public class students implements Initializable {
+public class ApprovedStudents implements Initializable {
     @FXML
     private VBox vbxItemStudent;
     private Node[] nodes;
@@ -22,9 +22,8 @@ public class students implements Initializable {
        nodes = new Node[10];
         for (int i = 1; i < nodes.length; i++) {
             try {
-                nodes[i] = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("descriptionStudent.fxml")));
+                nodes[i] = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("approvedStudentDescription.fxml")));
                 vbxItemStudent.getChildren().add(nodes[i]);
-                System.out.println("Nodo"+i);
             } catch (IOException e) {
                 e.printStackTrace();
             }

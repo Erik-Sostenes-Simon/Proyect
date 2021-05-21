@@ -1,2 +1,4 @@
-package org.example;public class DialogStudent {
+package org.example;
+
+public class DialogStudent {
 }
