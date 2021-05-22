@@ -1,4 +1,4 @@
-package org.proyect;
+package org.proyect.controller;
 
 import javafx.fxml.Initializable;
 
@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
+import org.proyect.App;
 
 
 public class ApprovedStudents implements Initializable {
@@ -22,9 +23,9 @@ public class ApprovedStudents implements Initializable {
        nodes = new Node[10];
         for (int i = 1; i < nodes.length; i++) {
             try {
-                nodes[i] = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("approvedStudentDescription.fxml")));
+                nodes[i] = App.loadView("approvedStudentDescription.fxml");
                 vbxItemStudent.getChildren().add(nodes[i]);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

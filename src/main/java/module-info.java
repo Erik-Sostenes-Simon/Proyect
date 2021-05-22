@@ -5,4 +5,6 @@ module org.example {
 
     opens org.proyect to javafx.fxml;
     exports org.proyect;
+    exports org.proyect.controller;
+    opens org.proyect.controller to javafx.fxml;
 }

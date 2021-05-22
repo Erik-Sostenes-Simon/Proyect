@@ -1,8 +1,9 @@
-package org.proyect;
+package org.proyect.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import org.proyect.App;
 
 
 import java.io.IOException;

@@ -1,6 +1,7 @@
-package org.proyect;
+package org.proyect.controller;
 
 import javafx.event.ActionEvent;
+import org.proyect.App;
 
 import java.io.IOException;
 
