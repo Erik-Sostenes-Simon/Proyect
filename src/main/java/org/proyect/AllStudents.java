@@ -1,0 +1,22 @@
+package org.proyect;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AllStudents implements Initializable {
+    private static Scene scene;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+    public void searchStudent(ActionEvent event) throws IOException {
+        App.setRoot("dialogStudent");
+    }
+}

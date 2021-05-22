@@ -3,6 +3,6 @@ module org.example {
     requires javafx.fxml;
     requires javafx.graphics;
 
-    opens org.example to javafx.fxml;
-    exports org.example;
+    opens org.proyect to javafx.fxml;
+    exports org.proyect;
 }
