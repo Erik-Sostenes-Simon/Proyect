@@ -11,13 +11,27 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+import java.sql.*;
 /**
  * JavaFX App
  */
 public class App extends Application {
-
     private static Scene scene;
-
+    private static final String PATH;
+    private static final String USER;
+    private static final String PASSWORD;
+    private PreparedStatement ps;
+    //Static variables
+    static {
+        PATH = "jdbc:mysql://localhost:3306/School?autoReconnect=true&useSSL=false";
+        USER = "root";
+        PASSWORD = "Loindeseable09";
+    }
+    //My connection baseData
+    public static Connection getConnection() throws SQLException{
+        Connection myConnection = null;
+        return myConnection = DriverManager.getConnection(PATH, USER, PASSWORD);
+    }
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("home"), 1350,700);
@@ -48,5 +62,4 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }

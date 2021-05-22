@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -21,42 +22,56 @@
                 </TabPane>
             </center>
             <left>
-                <VBox prefHeight="484.0" prefWidth="214.0" spacing="12.0" style="-fx-background-color: #138D75;" BorderPane.alignment="CENTER">
+                <VBox prefHeight="484.0" prefWidth="214.0" spacing="12.0" style="-fx-background-color: #D7DAD9;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #1B4F72;" text="Editar Perfil" textFill="#fcf7f7">
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="214.0" style="-fx-background-color: #7E8382;" text="Editar Perfil" textFill="#fcf7f7">
                             <VBox.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+                                <Insets bottom="10.0" top="30.0" />
                             </VBox.margin>
                             <font>
                                 <Font size="12.0" />
                             </font>
                             <opaqueInsets>
                                 <Insets />
-                            </opaqueInsets></Button>
-                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #0B5345;" text="Agregar alumno" textFill="#fcf5f5">
+                            </opaqueInsets>
+                     <graphic>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@org.proyect.img.master.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="217.0" style="-fx-background-color: #7E8382;" text="Agregar alumno" textFill="#fcf5f5">
                             <VBox.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" />
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                     <graphic>
+                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Desktop/student.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="218.0" style="-fx-background-color: #7E8382;" text="Eliminar alumno" textFill="#fff9f9">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
                             </VBox.margin>
                             <font>
                                 <Font size="12.0" />
                             </font></Button>
-                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #1B4F72;" text="Eliminar alumno" textFill="#fff9f9">
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="216.0" style="-fx-background-color: #7E8382;" text="Editar Alumno" textFill="#fcf1f1">
                             <VBox.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" />
+                                <Insets bottom="10.0" />
                             </VBox.margin>
                             <font>
                                 <Font size="12.0" />
                             </font></Button>
-                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #0B5345;" text="Editar Alumno" textFill="#fcf1f1">
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="214.0" style="-fx-background-color: #7E8382;" text="Estadisticas" textFill="#fcf6f6">
                             <VBox.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font size="12.0" />
-                            </font></Button>
-                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="214.0" style="-fx-background-color: #1B4F72;" text="Estadisticas" textFill="#fcf6f6">
-                            <VBox.margin>
-                                <Insets left="10.0" right="10.0" />
+                                <Insets />
                             </VBox.margin>
                             <font>
                                 <Font size="12.0" />
