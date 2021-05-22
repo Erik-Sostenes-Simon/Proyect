@@ -41,7 +41,7 @@
       </HBox>
       <Button mnemonicParsing="false" onAction="#showProfile" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #797D7F;" text="Perfil" textFill="#f5ecec">
          <font>
-            <Font name="System Bold Italic" size="12.0" />
+            <Font nameStudent="System Bold Italic" size="12.0" />
          </font>
       </Button>
    </children>

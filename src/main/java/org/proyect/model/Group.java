@@ -1,2 +1,7 @@
-package org.proyect.model;public enum Group {
+package org.proyect.model;
+
+public enum Group {
+    A,
+    B,
+    C
 }

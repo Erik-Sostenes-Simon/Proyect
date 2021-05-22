@@ -14,7 +14,7 @@
          <children>
             <Label style="-fx-background-color: tomato; -fx-border-radius: 10;" text="Registro de Estudiantes" textFill="#f4f5f4">
                <font>
-                  <Font name="System Bold Italic" size="24.0" />
+                  <Font nameStudent="System Bold Italic" size="24.0" />
                </font>
                <VBox.margin>
                   <Insets left="10.0" top="10.0" />
@@ -26,7 +26,7 @@
                      <children>
                         <Label text="0" textFill="#2a73ff">
                            <font>
-                              <Font name="System Bold" size="26.0" />
+                              <Font nameStudent="System Bold" size="26.0" />
                            </font>
                         </Label>
                         <Label text="Total alumnos" textFill="#1256dd" />
@@ -36,7 +36,7 @@
                      <children>
                         <Label text="0" textFill="#26bfbc">
                            <font>
-                              <Font name="System Bold" size="26.0" />
+                              <Font nameStudent="System Bold" size="26.0" />
                            </font>
                         </Label>
                         <Label text="Promedio General" textFill="#099e7b" />
@@ -46,7 +46,7 @@
                      <children>
                         <Label text="0" textFill="#fa5f7e">
                            <font>
-                              <Font name="System Bold" size="26.0" />
+                              <Font nameStudent="System Bold" size="26.0" />
                            </font>
                         </Label>
                         <Label text="Aprovados" textFill="#e11175" />
@@ -56,7 +56,7 @@
                      <children>
                         <Label text="0" textFill="#de0000">
                            <font>
-                              <Font name="System Bold" size="26.0" />
+                              <Font nameStudent="System Bold" size="26.0" />
                            </font>
                         </Label>
                         <Label text="Reprovados" textFill="#bc1010" />
@@ -67,7 +67,7 @@
                         <TextField fx:id="txtSearchProduct" prefHeight="25.0" prefWidth="124.0" />
                      </graphic>
                      <font>
-                        <Font name="System Bold" size="12.0" />
+                        <Font nameStudent="System Bold" size="12.0" />
                      </font>
                   </Button>
                </children>
