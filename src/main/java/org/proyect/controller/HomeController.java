@@ -9,7 +9,7 @@ import org.proyect.App;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Home implements Initializable {
+public class HomeController implements Initializable {
     @FXML
     private Tab tabViewStudents, tabApprovedStudents, tabFailedStudents;
 

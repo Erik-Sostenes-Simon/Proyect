@@ -1,4 +1,4 @@
 package org.proyect.controller;
 
-public class DialogStudent {
+public class DialogStudentController {
 }

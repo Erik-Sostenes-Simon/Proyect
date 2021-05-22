@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AllStudents implements Initializable {
+public class AllStudentsController implements Initializable {
     private static Scene scene;
 
     @Override

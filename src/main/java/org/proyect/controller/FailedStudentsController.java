@@ -13,7 +13,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 
-public class FailedStudents implements Initializable {
+public class FailedStudentsController implements Initializable {
     @FXML
     private VBox vbxItemStudent;
     private Node[] nodes;

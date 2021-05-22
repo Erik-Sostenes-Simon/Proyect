@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 import org.proyect.App;
 
 
-public class ApprovedStudents implements Initializable {
+public class ApprovedStudentsController implements Initializable {
     @FXML
     private VBox vbxItemStudent;
     private Node[] nodes;

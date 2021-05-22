@@ -5,7 +5,7 @@ import org.proyect.App;
 
 import java.io.IOException;
 
-public class DescriptionStudent {
+public class DescriptionStudentController {
 
     public void showProfile(ActionEvent event) throws IOException {
         App.setRoot("dialogStudent");
