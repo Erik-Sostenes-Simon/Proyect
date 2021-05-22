@@ -9,60 +9,60 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="690.0" prefWidth="1350.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.Home">
-   <children>
-      <BorderPane layoutX="270.0" layoutY="103.0" prefHeight="509.0" prefWidth="820.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <center>
-            <TabPane fx:id="tabPaneViewStudents" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-              <tabs>
-                <Tab fx:id="tabViewStudents" style="-fx-background-color: #2a73ff;" text="Tabla de alumnos" />
-                <Tab fx:id="tabApprovedStudents" style="-fx-background-color: #979A9A;" text="Alumnos Aprovados" />
-                  <Tab fx:id="tabFailedStudents" style="-fx-background-color: #2a73ff;" text="Alumnos Reprovados" />
-              </tabs>
-            </TabPane>
-         </center>
-         <left>
-            <VBox prefHeight="484.0" prefWidth="214.0" spacing="12.0" style="-fx-background-color: #138D75;" BorderPane.alignment="CENTER">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #1B4F72;" text="Editar Perfil" textFill="#fcf7f7">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold Italic" size="12.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets></Button>
-                  <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #0B5345;" text="Agregar alumno" textFill="#fcf5f5">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold Italic" size="12.0" />
-                     </font></Button>
-                  <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #1B4F72;" text="Eliminar alumno" textFill="#fff9f9">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold Italic" size="12.0" />
-                     </font></Button>
-                  <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #0B5345;" text="Editar Alumno" textFill="#fcf1f1">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold Italic" size="12.0" />
-                     </font></Button>
-                  <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="214.0" style="-fx-background-color: #1B4F72;" text="Estadisticas" textFill="#fcf6f6">
-                     <VBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="System Bold Italic" size="12.0" />
-                     </font></Button>
-               </children>
-            </VBox>
-         </left></BorderPane>
-   </children>
+    <children>
+        <BorderPane layoutX="270.0" layoutY="103.0" prefHeight="509.0" prefWidth="820.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <TabPane fx:id="tabPaneViewStudents" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <tabs>
+                        <Tab fx:id="tabViewStudents" style="-fx-background-color: #2a73ff;" text="Tabla de alumnos" />
+                        <Tab fx:id="tabApprovedStudents" style="-fx-background-color: #979A9A;" text="Alumnos Aprovados" />
+                        <Tab fx:id="tabFailedStudents" style="-fx-background-color: #2a73ff;" text="Alumnos Reprovados" />
+                    </tabs>
+                </TabPane>
+            </center>
+            <left>
+                <VBox prefHeight="484.0" prefWidth="214.0" spacing="12.0" style="-fx-background-color: #138D75;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #1B4F72;" text="Editar Perfil" textFill="#fcf7f7">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets></Button>
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #0B5345;" text="Agregar alumno" textFill="#fcf5f5">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="12.0" />
+                            </font></Button>
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #1B4F72;" text="Eliminar alumno" textFill="#fff9f9">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="12.0" />
+                            </font></Button>
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="194.0" style="-fx-background-color: #0B5345;" text="Editar Alumno" textFill="#fcf1f1">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="12.0" />
+                            </font></Button>
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="214.0" style="-fx-background-color: #1B4F72;" text="Estadisticas" textFill="#fcf6f6">
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="12.0" />
+                            </font></Button>
+                    </children>
+                </VBox>
+            </left></BorderPane>
+    </children>
 </AnchorPane>

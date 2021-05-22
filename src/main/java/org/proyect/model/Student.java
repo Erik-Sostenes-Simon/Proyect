@@ -106,5 +106,4 @@ public class Student {
     public void setAssistance(Assistance assistance) {
         this.assistance = assistance;
     }
-
 }

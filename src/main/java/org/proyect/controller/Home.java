@@ -4,7 +4,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Tab;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import org.proyect.App;
 
 import java.net.URL;
