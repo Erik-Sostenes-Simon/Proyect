@@ -3,51 +3,33 @@ package org.proyect.model;
 import java.util.List;
 
 public class Student {
-    private String nameManager;
     private String enrollment;
-    private Group group;
     private String nameStudent;
-    private Boolean canalization;
-    private List<Course> courses;
-    private Double totalAverage;
     private String reasonForDisapproval;
-    private Assistance assistance;
+    private Double totalAverage;
+    private Boolean canalization;
+    private String group;
+    private Integer grade;
+    private String idManager;
+    private List<Course> courses;
+    private List<Assistance> assistance;
 
-    public Student(String nameManager, String enrollment, Group group, String name, Boolean canalization, List<Course> courses, Double totalAverage, String reasonForDisapproval, Assistance assistance) {
-        this.nameManager = nameManager;
+    public Student(String enrollment, String nameStudent, String reasonForDisapproval, Double totalAverage, Boolean canalization, String group, Integer grade, String idManager) {
         this.enrollment = enrollment;
-        this.group = group;
-        this.nameStudent = name;
-        this.canalization = canalization;
-        this.courses = courses;
-        this.totalAverage = totalAverage;
+        this.nameStudent = nameStudent;
         this.reasonForDisapproval = reasonForDisapproval;
-        this.assistance = assistance;
+        this.totalAverage = totalAverage;
+        this.canalization = canalization;
+        this.group = group;
+        this.grade = grade;
+        this.idManager = idManager;
     }
-
-    public String getNameManager() {
-        return nameManager;
-    }
-
-    public void setNameManager(String nameManager) {
-        this.nameManager = nameManager;
-    }
-
-
     public String getEnrollment() {
         return enrollment;
     }
 
     public void setEnrollment(String enrollment) {
         this.enrollment = enrollment;
-    }
-
-    public Group getGroup() {
-        return group;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
     }
 
     public String getNameStudent() {
@@ -58,20 +40,12 @@ public class Student {
         this.nameStudent = nameStudent;
     }
 
-    public Boolean getCanalization() {
-        return canalization;
+    public String getReasonForDisapproval() {
+        return reasonForDisapproval;
     }
 
-    public void setCanalization(Boolean canalization) {
-        this.canalization = canalization;
-    }
-
-    public List<Course> getCourses() {
-        return courses;
-    }
-
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public void setReasonForDisapproval(String reasonForDisapproval) {
+        this.reasonForDisapproval = reasonForDisapproval;
     }
 
     public Double getTotalAverage() {
@@ -82,19 +56,64 @@ public class Student {
         this.totalAverage = totalAverage;
     }
 
-    public String getReasonForDisapproval() {
-        return reasonForDisapproval;
+    public Boolean getCanalization() {
+        return canalization;
     }
 
-    public void setReasonForDisapproval(String reasonForDisapproval) {
-        this.reasonForDisapproval = reasonForDisapproval;
+    public void setCanalization(Boolean canalization) {
+        this.canalization = canalization;
     }
 
-    public Assistance getAssistance() {
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public Integer getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Integer grade) {
+        this.grade = grade;
+    }
+
+    public String getIdManager() {
+        return idManager;
+    }
+
+    public void setIdManager(String idManager) {
+        this.idManager = idManager;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
+    public List<Assistance> getAssistance() {
         return assistance;
     }
 
-    public void setAssistance(Assistance assistance) {
+    public void setAssistance(List<Assistance> assistance) {
         this.assistance = assistance;
+    }
+    @Override
+    public String toString() {
+        return "Student{" +
+                "enrollment='" + enrollment + '\'' +
+                ", nameStudent='" + nameStudent + '\'' +
+                ", reasonForDisapproval='" + reasonForDisapproval + '\'' +
+                ", totalAverage=" + totalAverage +
+                ", canalization=" + canalization +
+                ", group='" + group + '\'' +
+                ", grade=" + grade +
+                ", idManager='\n" + idManager + '\'' +
+                '}';
     }
 }

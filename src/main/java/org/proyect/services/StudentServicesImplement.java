@@ -1,6 +1,6 @@
 package org.proyect.services;
 
-import org.proyect.App;
+import org.proyect.controller.AllStudentsController;
 import org.proyect.model.Student;
 
 import java.sql.Connection;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class StudentServicesImplement implements StudentServices {
     private Map<Integer, Student> studentsList;
-    Connection connection;
+    private Connection connection;
     private PreparedStatement ps;
     private ResultSet rs;
 
@@ -26,7 +26,7 @@ public class StudentServicesImplement implements StudentServices {
         if(student == null)
             throw new RuntimeException("Student cannot be null");
 
-        connection = App.getConnection();
+        connection = AllStudentsController.getConnection();
         ps = connection.prepareStatement("INSER INTO Student() VALUES(?, ?, ?)");
         ps.setString(1, student.getEnrollment());
 
@@ -41,7 +41,7 @@ public class StudentServicesImplement implements StudentServices {
         if(enrollment.isBlank())
             throw new RuntimeException("Student cannot be null");
 
-        connection = App.getConnection();
+        connection = AllStudentsController.getConnection();
         ps = connection.prepareStatement("DELETE FROM Student WHERE enrollment=?");
         ps.setString(1, enrollment);
         int result = ps.executeUpdate();
@@ -54,7 +54,7 @@ public class StudentServicesImplement implements StudentServices {
     public void updateStudent(String enrollment, Student student) throws SQLException {
         if(enrollment.isBlank())
             throw new RuntimeException("Student cannot be null");
-        connection = App.getConnection();
+        connection = AllStudentsController.getConnection();
         ps = connection.prepareStatement("UPDATE Student SET enrollment=?, nameStudent=? WHERE enrollment");
         ps.setString(1, student.getEnrollment());
         ps.setString(2, enrollment);
@@ -67,23 +67,28 @@ public class StudentServicesImplement implements StudentServices {
     }
 
     @Override
-    public Collection getAllStudent() throws SQLException {
-        connection = App.getConnection();
-        ps = connection.prepareStatement("SELECT * FROM Student");
-        rs = ps.executeQuery();
-        int key = 0;
-        while(rs.next()) {
-            //studentsList.putAll(++key, new Student(rs.getString("")));
+    public Collection getAllStudent()  {
+        connection = DAO.getConnection();
+        try {
+            ps = connection.prepareStatement("SELECT * FROM Students");
+            rs = ps.executeQuery();
+            Integer key = 0;
+            while(rs.next())
+                studentsList.put(++key, new Student(rs.getString("idStudent"), rs.getString("nameStudent"),
+                        rs.getString("reasonForDisapproval"), rs.getDouble("totalAvarage"), rs.getBoolean("canalization"),
+                        rs.getString("groupS"), rs.getInt("grade"), rs.getString("idManager")));
+            DAO.close(connection, ps, rs);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
         return studentsList.values();
     }
-
 
     @Override
     public Student getByIdStudent(String enrollment) throws SQLException {
         if(enrollment.isBlank())
             throw new RuntimeException("Student cannot be null");
-        connection = App.getConnection();
+        connection = AllStudentsController.getConnection();
         ps = connection.prepareStatement("SELECT * FROM Student");
         rs = ps.executeQuery();
         return null;
