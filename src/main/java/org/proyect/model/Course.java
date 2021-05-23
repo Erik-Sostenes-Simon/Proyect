@@ -6,12 +6,14 @@ public class Course {
     private Integer key;
     private String nameTeacher;
     private String nameCourse;
+    private Integer evaluationUnit;
     private Float qualification;
 
-    public Course(Integer key, String nameTeacher, String nameCourse, Float qualification) {
+    public Course(Integer key, String nameTeacher, String nameCourse, Integer evaluationUnit, Float qualification) {
         this.key = key;
         this.nameTeacher = nameTeacher;
         this.nameCourse = nameCourse;
+        this.evaluationUnit = evaluationUnit;
         this.qualification = qualification;
     }
 
@@ -44,6 +46,14 @@ public class Course {
 
     public void setNameTeacher(String nameTeacher) {
         this.nameTeacher = nameTeacher;
+    }
+
+    public Integer getEvaluationUnit() {
+        return evaluationUnit;
+    }
+
+    public void setEvaluationUnit(Integer evaluationUnit) {
+        this.evaluationUnit = evaluationUnit;
     }
     //Validate key
     public void validateKey() {

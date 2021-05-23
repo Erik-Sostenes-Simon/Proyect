@@ -33,14 +33,7 @@
                             </font>
                             <opaqueInsets>
                                 <Insets />
-                            </opaqueInsets>
-                     <graphic>
-                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@org.proyect.img.master.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
+                            </opaqueInsets></Button>
                         <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="217.0" style="-fx-background-color: #7E8382;" text="Agregar alumno" textFill="#fcf5f5">
                             <VBox.margin>
                                 <Insets bottom="10.0" />

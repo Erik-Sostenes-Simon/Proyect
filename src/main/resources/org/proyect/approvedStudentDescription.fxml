@@ -8,6 +8,7 @@
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1100.0" spacing="5.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.DescriptionStudentController">
    <children>
+      <Label text="Nombre del estudiante" />
       <HBox alignment="CENTER_LEFT" prefHeight="130.0" prefWidth="1080.0" spacing="80.0" style="-fx-background-color: #1567CE;">
          <children>
             <Label text="Nombre" textFill="#e7e5e5">

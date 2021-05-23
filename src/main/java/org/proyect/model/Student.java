@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Student {
     private String nameManager;
-    private Integer id;
     private String enrollment;
     private Group group;
     private String nameStudent;
@@ -14,9 +13,8 @@ public class Student {
     private String reasonForDisapproval;
     private Assistance assistance;
 
-    public Student(String nameManager, Integer id, String enrollment, Group group, String name, Boolean canalization, List<Course> courses, Double totalAverage, String reasonForDisapproval, Assistance assistance) {
+    public Student(String nameManager, String enrollment, Group group, String name, Boolean canalization, List<Course> courses, Double totalAverage, String reasonForDisapproval, Assistance assistance) {
         this.nameManager = nameManager;
-        this.id = id;
         this.enrollment = enrollment;
         this.group = group;
         this.nameStudent = name;
@@ -35,13 +33,6 @@ public class Student {
         this.nameManager = nameManager;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getEnrollment() {
         return enrollment;
