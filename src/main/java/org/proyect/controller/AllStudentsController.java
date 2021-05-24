@@ -1,51 +1,57 @@
 package org.proyect.controller;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import org.proyect.App;
-import org.proyect.services.StudentServicesImplement;
 
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import org.proyect.App;
+import org.proyect.model.Student;
+import org.proyect.services.StudentServicesImplement;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class AllStudentsController implements Initializable {
+    @FXML
+    private VBox vbxItemStudent;
+
+
     private static Scene scene;
     private StudentServicesImplement studentServicesImplement;
-    private static final String PATH;
-    private static final String USER;
-    private static final String PASSWORD;
+    private Map<Integer, Student> student;
 
-    //Static variables
-    static {
-        PATH = "jdbc:mysql://localhost:3306/advisory_administrator?autoReconnect=true&useSSL=false";
-        USER = "root";
-        PASSWORD = "Loindeseable09";
-    }
-    //My connection baseData
-    public static Connection getConnection() {
-        Connection myConnection = null;
-        try {
-            myConnection = DriverManager.getConnection(PATH, USER, PASSWORD);
-            System.out.println("Conexión exitosa");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return myConnection;
-    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         studentServicesImplement = new StudentServicesImplement();
+        student = studentServicesImplement.getAllStudent();
+                FXMLLoader fxmlLoader = null;
+                try {
+                    for (int i = 1; i <= student.size(); i++) {
+                        fxmlLoader = App.loadFXMlView("student");
+                        VBox sectionVBOX = fxmlLoader.load();
+                        StudentController studentController = fxmlLoader.getController();
+                        studentController.setStudent(student.get(i), i);
+                        vbxItemStudent.getChildren().add(sectionVBOX);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
     }
+
+
 
     public void searchStudent(ActionEvent event) throws IOException {
         App.setRoot("dialogStudent");
-        System.out.println(studentServicesImplement.getAllStudent());
-
     }
+
 }

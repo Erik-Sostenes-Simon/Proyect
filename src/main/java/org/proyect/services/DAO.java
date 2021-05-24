@@ -24,9 +24,8 @@ public class DAO {
         Connection myConnection = null;
         try {
             myConnection = DriverManager.getConnection(PATH, USER, PASSWORD);
-            System.out.println("Conexión exitosa");
         } catch (SQLException e) {
-            Logger.getLogger( "Ocurrió un error: {0}", e.getMessage());
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error de conexión{0}", e.getMessage());
         }
         return myConnection;
     }

@@ -35,6 +35,10 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
+    public static FXMLLoader loadFXMlView(String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        return fxmlLoader;
+    }
     public static Node loadView(String view)  {
         Node viewStudents = null;
         try {

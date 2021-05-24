@@ -8,9 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="546.0" prefWidth="927.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.AllStudentsController">
+<AnchorPane prefHeight="664.0" prefWidth="927.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.AllStudentsController">
    <children>
-      <VBox prefHeight="474.0" prefWidth="856.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-38.0" AnchorPane.topAnchor="0.0">
+      <VBox prefHeight="584.0" prefWidth="927.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label style="-fx-background-color: tomato; -fx-border-radius: 10;" text="Registro de Estudiantes" textFill="#f4f5f4">
                <font>
@@ -20,7 +20,7 @@
                   <Insets left="10.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <HBox alignment="CENTER_LEFT" prefHeight="135.0" prefWidth="821.0" spacing="50.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="119.0" prefWidth="887.0" spacing="50.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="76.0" prefWidth="108.0">
                      <children>
@@ -75,25 +75,62 @@
                   <Insets />
                </opaqueInsets>
                <padding>
-                  <Insets bottom="50.0" left="50.0" right="50.0" top="30.0" />
+                  <Insets bottom="20.0" left="50.0" right="50.0" top="30.0" />
                </padding>
                <VBox.margin>
                   <Insets bottom="50.0" left="20.0" right="20.0" />
                </VBox.margin>
             </HBox>
-            <Pane prefHeight="319.0" prefWidth="910.0">
+            <Pane prefHeight="69.0" prefWidth="927.0">
                <children>
-                  <TableView layoutX="68.0" maxWidth="1.7976931348623157E308" prefHeight="316.0" prefWidth="798.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="Grupo " />
-                      <TableColumn prefWidth="75.0" text="No." />
-                        <TableColumn prefWidth="150.0" text="Control" />
-                        <TableColumn minWidth="0.0" prefWidth="356.0" text="Nombre" />
-                        <TableColumn prefWidth="140.0" text="Final" />
-                    </columns>
-                  </TableView>
+                  <HBox alignment="CENTER" layoutX="214.0" layoutY="7.0" prefHeight="55.0" prefWidth="689.0" spacing="65.0" style="-fx-background-color: #38D19E;">
+                     <children>
+                        <Label text="Grupo" textFill="#e7e5e5">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Grado" textFill="#e7e5e5">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Matricula" textFill="#e7e5e5">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Promedio" textFill="#e7e5e5">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Canalización" textFill="#e7e5e5">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                </children>
             </Pane>
+            <ScrollPane prefHeight="366.0" prefWidth="927.0" style="-fx-background-color: white;">
+               <content>
+                  <VBox fx:id="vbxItemStudent" />
+               </content>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </ScrollPane>
          </children>
       </VBox>
    </children>

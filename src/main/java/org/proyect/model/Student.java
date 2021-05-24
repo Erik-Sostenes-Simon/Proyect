@@ -3,7 +3,7 @@ package org.proyect.model;
 import java.util.List;
 
 public class Student {
-    private String enrollment;
+    private String tuition;
     private String nameStudent;
     private String reasonForDisapproval;
     private Double totalAverage;
@@ -14,8 +14,14 @@ public class Student {
     private List<Course> courses;
     private List<Assistance> assistance;
 
-    public Student(String enrollment, String nameStudent, String reasonForDisapproval, Double totalAverage, Boolean canalization, String group, Integer grade, String idManager) {
-        this.enrollment = enrollment;
+    public Student(String group, String tuition, String nameStudent, Double totalAverage) {
+        this.group = group;
+        this.tuition = tuition;
+        this.nameStudent = nameStudent;
+        this.totalAverage = totalAverage;
+    }
+    public Student(String tuition, String nameStudent, String reasonForDisapproval, Double totalAverage, Boolean canalization, String group, Integer grade, String idManager) {
+        this.tuition = tuition;
         this.nameStudent = nameStudent;
         this.reasonForDisapproval = reasonForDisapproval;
         this.totalAverage = totalAverage;
@@ -24,12 +30,12 @@ public class Student {
         this.grade = grade;
         this.idManager = idManager;
     }
-    public String getEnrollment() {
-        return enrollment;
+    public String getTuition() {
+        return tuition;
     }
 
-    public void setEnrollment(String enrollment) {
-        this.enrollment = enrollment;
+    public void setTuition(String tuition) {
+        this.tuition = tuition;
     }
 
     public String getNameStudent() {
@@ -106,7 +112,7 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "enrollment='" + enrollment + '\'' +
+                "tuition='" + tuition + '\'' +
                 ", nameStudent='" + nameStudent + '\'' +
                 ", reasonForDisapproval='" + reasonForDisapproval + '\'' +
                 ", totalAverage=" + totalAverage +
