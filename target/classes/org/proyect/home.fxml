@@ -24,7 +24,7 @@
             <left>
                 <VBox prefHeight="484.0" prefWidth="214.0" spacing="12.0" style="-fx-background-color: #D7DAD9;" BorderPane.alignment="CENTER">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="214.0" style="-fx-background-color: #7E8382;" text="Editar Perfil" textFill="#fcf7f7">
+                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="214.0" style="-fx-background-color: #7E8382;" text="Perfil del Tutor" textFill="#fcf7f7">
                             <VBox.margin>
                                 <Insets bottom="10.0" top="30.0" />
                             </VBox.margin>
@@ -34,7 +34,7 @@
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets></Button>
-                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="217.0" style="-fx-background-color: #7E8382;" text="Agregar alumno" textFill="#fcf5f5">
+                        <Button mnemonicParsing="false" onAction="#showViewAddStudent" prefHeight="110.0" prefWidth="217.0" style="-fx-background-color: #7E8382;" text="Agregar alumno" textFill="#fcf5f5">
                             <VBox.margin>
                                 <Insets bottom="10.0" />
                             </VBox.margin>

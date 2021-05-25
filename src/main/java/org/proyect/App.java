@@ -11,10 +11,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-import java.sql.*;
-/**
- * JavaFX App
- */
 public class App extends Application {
     private static Scene scene;
     @Override

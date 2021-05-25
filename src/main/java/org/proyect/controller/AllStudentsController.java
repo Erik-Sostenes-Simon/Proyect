@@ -5,11 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import org.proyect.App;
 import org.proyect.model.Student;
@@ -31,27 +27,28 @@ public class AllStudentsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ActionEvent e = null;
         studentServicesImplement = new StudentServicesImplement();
-        student = studentServicesImplement.getAllStudent();
-                FXMLLoader fxmlLoader = null;
-                try {
-                    for (int i = 1; i <= student.size(); i++) {
-                        fxmlLoader = App.loadFXMlView("student");
-                        VBox sectionVBOX = fxmlLoader.load();
-                        StudentController studentController = fxmlLoader.getController();
-                        studentController.setStudent(student.get(i), i);
-                        vbxItemStudent.getChildren().add(sectionVBOX);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
+        update(e);
     }
-
-
 
     public void searchStudent(ActionEvent event) throws IOException {
         App.setRoot("dialogStudent");
     }
-
+    @FXML
+    public void update(ActionEvent event) {
+        student = studentServicesImplement.getAllStudent();
+        FXMLLoader fxmlLoader = null;
+        try {
+            for (int i = 1; i <= student.size(); i++) {
+                fxmlLoader = App.loadFXMlView("student");
+                VBox sectionVBOX = fxmlLoader.load();
+                StudentController studentController = fxmlLoader.getController();
+                studentController.setStudent(student.get(i), i);
+                vbxItemStudent.getChildren().add(sectionVBOX);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -8,7 +8,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -25,18 +24,30 @@ public class StudentServicesImplement implements StudentServices {
     }
 
     @Override
-    public void addStudent(Student student) throws SQLException {
+    public void addStudent(Student student) {
         if(student == null)
             throw new RuntimeException("Student cannot be null");
-
+//idStudent | nameStudent | reasonForDisapproval  | totalAvarage | canalization | groupS | grade | idManager
         connection = DAO.getConnection();
-        ps = connection.prepareStatement("INSER INTO Student() VALUES(?, ?, ?)");
-        ps.setString(1, student.getTuition());
+        try {
+            ps = connection.prepareStatement("INSERT INTO Students(idStudent, nameStudent, reasonForDisapproval, totalAvarage, canalization, groupS, grade, idManager) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+            ps.setString(1, student.getTuition());
+            ps.setString(2, student.getNameStudent());
+            ps.setString(3, student.getReasonForDisapproval());
+            ps.setDouble(4, student.getTotalAverage());
+            ps.setBoolean(5, student.getCanalization());
+            ps.setString(6, student.getGroup());
+            ps.setInt(7, student.getGrade());
+            ps.setString(8, student.getIdManager());
+            int result = ps.executeUpdate();
 
-        int result = ps.executeUpdate();
+            if(result > 0)
+                System.out.println("Student successfully added");
+            DAO.close(connection, ps, rs);
+        } catch (SQLException e) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error {0}", e.getMessage());
+        }
 
-        if(result > 0)
-            System.out.println("Student successfully added");
     }
 
     @Override
@@ -82,7 +93,7 @@ public class StudentServicesImplement implements StudentServices {
                         rs.getString("groupS"), rs.getInt("grade"), rs.getString("idManager")));
             DAO.close(connection, ps, rs);
         } catch (SQLException e) {
-            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error de conexión{0}", e.getMessage());
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error {0}", e.getMessage());
         }
 
         return studentsList;
