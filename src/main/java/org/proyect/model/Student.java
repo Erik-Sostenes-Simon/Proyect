@@ -12,14 +12,8 @@ public class Student {
     private Integer grade;
     private String idManager;
     private List<Course> courses;
-    private List<Assistance> assistance;
+    private Assistance assistance;
 
-    public Student(String group, String tuition, String nameStudent, Double totalAverage) {
-        this.group = group;
-        this.tuition = tuition;
-        this.nameStudent = nameStudent;
-        this.totalAverage = totalAverage;
-    }
     public Student(String tuition, String nameStudent, String reasonForDisapproval, Double totalAverage, Boolean canalization, String group, Integer grade, String idManager) {
         this.tuition = tuition;
         this.nameStudent = nameStudent;
@@ -29,6 +23,7 @@ public class Student {
         this.group = group;
         this.grade = grade;
         this.idManager = idManager;
+        this.assistance = assistance;
     }
     public String getTuition() {
         return tuition;
@@ -102,11 +97,11 @@ public class Student {
         this.courses = courses;
     }
 
-    public List<Assistance> getAssistance() {
+    public Assistance getAssistance() {
         return assistance;
     }
 
-    public void setAssistance(List<Assistance> assistance) {
+    public void setAssistance(Assistance assistance) {
         this.assistance = assistance;
     }
     @Override

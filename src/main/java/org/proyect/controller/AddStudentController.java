@@ -35,8 +35,8 @@ public class AddStudentController implements Initializable {
     //idStudent | nameStudent | reasonForDisapproval  | totalAvarage | canalization | groupS | grade | idManager
     @FXML
     public void addStudent(ActionEvent event) {
-        studentServicesImplement.addStudent(new Student(txtTuition.getText(), txtNameStudent.getText(), txtReasonForDisapproval.getText(), 70D, Boolean.valueOf(txtCanalization.getText()),
-                String.valueOf(cmbGroup.getSelectionModel().getSelectedIndex()+1), cmbGrade.getSelectionModel().getSelectedIndex()+1, txtIdManager.getText()));
+      //  studentServicesImplement.addStudent(new Student(txtTuition.getText(), txtNameStudent.getText(), txtReasonForDisapproval.getText(), 70D, Boolean.valueOf(txtCanalization.getText()),
+        //        String.valueOf(cmbGroup.getSelectionModel().getSelectedIndex()+1), cmbGrade.getSelectionModel().getSelectedIndex()+1, txtIdManager.getText()));
     }
     public void loadCmb() {
         itemsGrade = FXCollections.observableArrayList();

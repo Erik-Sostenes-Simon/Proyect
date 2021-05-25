@@ -2,6 +2,7 @@ package org.proyect.services;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import org.proyect.model.Assistance;
 import org.proyect.model.Student;
 
 import java.sql.Connection;
@@ -88,14 +89,14 @@ public class StudentServicesImplement implements StudentServices {
             rs = ps.executeQuery();
             Integer key = 1;
             while(rs.next())
-                studentsList.put(key++ ,new Student(rs.getString("idStudent"), rs.getString("nameStudent"),
+                studentsList.put(key++, new Student(rs.getString("idStudent"), rs.getString("nameStudent"),
                         rs.getString("reasonForDisapproval"), rs.getDouble("totalAvarage"), rs.getBoolean("canalization"),
                         rs.getString("groupS"), rs.getInt("grade"), rs.getString("idManager")));
+
             DAO.close(connection, ps, rs);
         } catch (SQLException e) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error {0}", e.getMessage());
         }
-
         return studentsList;
     }
     //you get a student for his tuition

@@ -8,7 +8,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import org.proyect.App;
+import org.proyect.model.Assistance;
 import org.proyect.model.Student;
+import org.proyect.services.AssistanceServicesImplement;
 import org.proyect.services.StudentServicesImplement;
 
 import java.io.IOException;
@@ -23,12 +25,17 @@ public class AllStudentsController implements Initializable {
 
     private static Scene scene;
     private StudentServicesImplement studentServicesImplement;
+    private AssistanceServicesImplement assistanceServicesImplement;
     private Map<Integer, Student> student;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ActionEvent e = null;
         studentServicesImplement = new StudentServicesImplement();
+        assistanceServicesImplement = new AssistanceServicesImplement();
+
+        Assistance assistance = assistanceServicesImplement.getByIdAssistance("19011134");
+        System.out.println(assistance);
         update(e);
     }
 
@@ -38,14 +45,20 @@ public class AllStudentsController implements Initializable {
     @FXML
     public void update(ActionEvent event) {
         student = studentServicesImplement.getAllStudent();
+
         FXMLLoader fxmlLoader = null;
         try {
             for (int i = 1; i <= student.size(); i++) {
                 fxmlLoader = App.loadFXMlView("student");
                 VBox sectionVBOX = fxmlLoader.load();
                 StudentController studentController = fxmlLoader.getController();
+                student.get(i).setAssistance(assistanceServicesImplement.getByIdAssistance(student.get(i).getTuition()));
                 studentController.setStudent(student.get(i), i);
                 vbxItemStudent.getChildren().add(sectionVBOX);
+                student.get(i).getAssistance().setAssistanceInSocialService("");
+                student.get(i).getAssistance().setPsychologyAssistance("");
+                student.get(i).getAssistance().setAssistanceInAcademicCounseling("");
+                student.get(i).getAssistance().setMedicalServiceAssistance("");
             }
         } catch (IOException e) {
             e.printStackTrace();

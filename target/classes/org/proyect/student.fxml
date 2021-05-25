@@ -10,12 +10,12 @@
    <children>
       <Pane prefHeight="42.0" prefWidth="1080.0">
          <children>
-            <Label fx:id="txtNameStudent" layoutX="61.0" layoutY="1.0" prefHeight="27.0" prefWidth="194.0" text="Nombre del estudiante" textAlignment="CENTER" textFill="#ff596c">
+            <Label fx:id="lblNameStudent" layoutX="61.0" layoutY="1.0" prefHeight="27.0" prefWidth="194.0" text="Nombre del estudiante" textAlignment="CENTER" textFill="#ff596c">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="txtNu" layoutX="14.0" layoutY="1.0" prefHeight="27.0" prefWidth="40.0" text="N." textAlignment="CENTER" textFill="#ff596c">
+            <Label fx:id="lblNu" layoutX="14.0" layoutY="1.0" prefHeight="27.0" prefWidth="40.0" text="N." textAlignment="CENTER" textFill="#ff596c">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
@@ -26,7 +26,7 @@
          <children>
             <HBox alignment="CENTER" layoutX="196.0" layoutY="1.0" prefHeight="41.0" prefWidth="689.0" spacing="65.0" style="-fx-background-color: #1567CE;">
                <children>
-                  <Label fx:id="txtGroup" text="A" textFill="#e7e5e5">
+                  <Label fx:id="lblGroup" text="A" textFill="#e7e5e5">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>
@@ -37,7 +37,7 @@
                         <Insets left="-20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="txtGrade" text="4" textFill="#e7e5e5">
+                  <Label fx:id="lblGrade" text="4" textFill="#e7e5e5">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>
@@ -48,7 +48,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="txtTuition" text="19011125" textFill="#e7e5e5">
+                  <Label fx:id="lblTuition" text="19011125" textFill="#e7e5e5">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>
@@ -59,7 +59,7 @@
                         <Insets left="25.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="txtTotalAverage" text="80" textFill="#e7e5e5">
+                  <Label fx:id="lblTotalAverage" text="80" textFill="#e7e5e5">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>
@@ -67,7 +67,7 @@
                         <Insets left="10.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="txtCanalization" text="True" textFill="#e7e5e5">
+                  <Label fx:id="lblCanalization" text="True" textFill="#e7e5e5">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>
@@ -117,36 +117,36 @@
                   <Insets />
                </HBox.margin>
             </Label>
-            <Label text="asiste" textFill="#252525">
+            <Label fx:id="lblCounseling" textFill="#252525">
                <HBox.margin>
-                  <Insets left="10.0" />
+                  <Insets left="17.0" />
                </HBox.margin>
                <font>
-                  <Font name="System Bold Italic" size="11.0" />
+                  <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <Label text="Asistes" textFill="#222121">
+            <Label fx:id="lblPsychology" textFill="#222121">
                <HBox.margin>
-                  <Insets left="50.0" />
+                  <Insets left="55.0" />
                </HBox.margin>
                <font>
-                  <Font name="System Bold" size="11.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label text="No asiste" textFill="#171717">
+            <Label fx:id="lblMedical" textFill="#171717">
                <HBox.margin>
-                  <Insets left="50.0" />
+                  <Insets left="70.0" />
                </HBox.margin>
                <font>
-                  <Font name="System Bold Italic" size="11.0" />
+                  <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
-            <Label text="Asiste" textFill="#282727">
+            <Label fx:id="lblSocial" textFill="#282727">
                <HBox.margin>
-                  <Insets left="40.0" />
+                  <Insets left="65.0" />
                </HBox.margin>
                <font>
-                  <Font name="System Bold Italic" size="11.0" />
+                  <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
          </children>
