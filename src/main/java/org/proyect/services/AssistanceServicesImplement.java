@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class AssistanceServicesImplement implements AssistanceServices{
@@ -30,8 +32,8 @@ public class AssistanceServicesImplement implements AssistanceServices{
                 loadAssistance(rs.getString("nameAssistance"));
             }
             DAO.close(connection, ps, rs);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error {0}", e.getMessage());
         }
         return assistance;
     }

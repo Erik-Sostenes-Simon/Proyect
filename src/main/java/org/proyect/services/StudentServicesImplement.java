@@ -1,8 +1,4 @@
 package org.proyect.services;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import org.proyect.model.Assistance;
 import org.proyect.model.Student;
 
 import java.sql.Connection;

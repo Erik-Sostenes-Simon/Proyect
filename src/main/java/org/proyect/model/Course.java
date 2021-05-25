@@ -7,14 +7,13 @@ public class Course {
     private String nameTeacher;
     private String nameCourse;
     private Integer evaluationUnit;
-    private Float qualification;
+    private Double qualification;
 
-    public Course(Integer key, String nameTeacher, String nameCourse, Integer evaluationUnit, Float qualification) {
-        this.key = key;
-        this.nameTeacher = nameTeacher;
+    public Course(){}
+    public Course(String nameCourse, Double qualification,  Integer evaluationUnit) {
         this.nameCourse = nameCourse;
-        this.evaluationUnit = evaluationUnit;
         this.qualification = qualification;
+        this.evaluationUnit = evaluationUnit;
     }
 
     public Integer getKey() {
@@ -33,11 +32,11 @@ public class Course {
         this.nameCourse = nameCourse;
     }
 
-    public Float getQualification() {
+    public Double getQualification() {
         return qualification;
     }
 
-    public void setQualification(Float qualification) {
+    public void setQualification(Double qualification) {
         this.qualification = qualification;
     }
     public String getNameTeacher() {
@@ -54,26 +53,6 @@ public class Course {
 
     public void setEvaluationUnit(Integer evaluationUnit) {
         this.evaluationUnit = evaluationUnit;
-    }
-    //Validate key
-    public void validateKey() {
-        if(key.toString().isBlank())
-            throw  new RuntimeException("Key cannot be null ");
-    }
-    //validate name curse
-    public void nameCurse() {
-        if(nameCourse.isBlank())
-            throw  new RuntimeException("Name curse cannot be null ");
-    }
-    //validate qualification
-    public void validateQualification() {
-        if(qualification.toString().isBlank())
-            throw  new RuntimeException("Qualification cannot be null ");
-    }
-    //validate qualification
-    public void validateNameTeacher() {
-        if(nameTeacher.isBlank())
-            throw  new RuntimeException("Name Teacher cannot be null ");
     }
     @Override
     public String toString() {

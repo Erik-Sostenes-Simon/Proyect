@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import org.proyect.App;
-import org.proyect.model.Assistance;
 import org.proyect.model.Student;
 import org.proyect.services.AssistanceServicesImplement;
 import org.proyect.services.StudentServicesImplement;
@@ -33,9 +32,6 @@ public class AllStudentsController implements Initializable {
         ActionEvent e = null;
         studentServicesImplement = new StudentServicesImplement();
         assistanceServicesImplement = new AssistanceServicesImplement();
-
-        Assistance assistance = assistanceServicesImplement.getByIdAssistance("19011134");
-        System.out.println(assistance);
         update(e);
     }
 

@@ -11,7 +11,7 @@ public class Student {
     private String group;
     private Integer grade;
     private String idManager;
-    private List<Course> courses;
+    private Course courses;
     private Assistance assistance;
 
     public Student(String tuition, String nameStudent, String reasonForDisapproval, Double totalAverage, Boolean canalization, String group, Integer grade, String idManager) {
@@ -23,7 +23,6 @@ public class Student {
         this.group = group;
         this.grade = grade;
         this.idManager = idManager;
-        this.assistance = assistance;
     }
     public String getTuition() {
         return tuition;
@@ -89,11 +88,11 @@ public class Student {
         this.idManager = idManager;
     }
 
-    public List<Course> getCourses() {
+    public Course getCourses() {
         return courses;
     }
 
-    public void setCourses(List<Course> courses) {
+    public void setCourses(Course courses) {
         this.courses = courses;
     }
 

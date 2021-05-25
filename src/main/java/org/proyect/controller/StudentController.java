@@ -2,9 +2,14 @@ package org.proyect.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import org.proyect.App;
 import org.proyect.model.Student;
 
@@ -41,6 +46,13 @@ public class StudentController implements Initializable {
         return assistance.isEmpty() ? "No" :"Si";
     }
     public void editStudent(ActionEvent event) throws IOException {
-        App.setRoot("dialogStudent");
+        FXMLLoader loader = App.loadFXMlView("dialogStudent");
+        Parent root = loader.load();
+        DialogStudentController dialogStudentController = loader.getController();
+        dialogStudentController.initCourses(lblTuition.getText());
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
 }
