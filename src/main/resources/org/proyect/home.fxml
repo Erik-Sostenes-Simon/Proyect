@@ -48,7 +48,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="218.0" style="-fx-background-color: #7E8382;" text="Eliminar alumno" textFill="#fff9f9">
+                        <Button mnemonicParsing="false" onAction="#showViewDeleteStudent" prefHeight="110.0" prefWidth="218.0" style="-fx-background-color: #7E8382;" text="Eliminar alumno" textFill="#fff9f9">
                             <VBox.margin>
                                 <Insets bottom="10.0" />
                             </VBox.margin>

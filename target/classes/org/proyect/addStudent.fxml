@@ -8,14 +8,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="468.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.AddStudentController">
+<AnchorPane prefHeight="601.0" prefWidth="1025.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.AddStudentController">
    <children>
       <GridPane layoutX="188.0" layoutY="119.0" prefHeight="414.0" prefWidth="618.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="98.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="142.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="151.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="219.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="409.0" minWidth="10.0" prefWidth="409.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -69,7 +70,10 @@
             <ComboBox fx:id="cmbGroup" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtTuition" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="txtNameStudent" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextArea fx:id="txtReasonForDisapproval" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" />
+            <TextArea fx:id="txtReasonForDisapproval" prefHeight="73.0" prefWidth="199.0" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets right="10.0" top="10.0" />
+               </GridPane.margin></TextArea>
             <Label text="Nombre: " GridPane.rowIndex="3">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
@@ -104,23 +108,116 @@
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <VBox prefHeight="83.0" prefWidth="165.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <children>
-                  <CheckBox mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox fx:id="cbDatabase" mnemonicParsing="false" text="Base de datos" />
+                  <CheckBox fx:id="cbElectronics" mnemonicParsing="false" text="Electrónica">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></CheckBox>
+                  <CheckBox fx:id="cbAdvancedTopics" mnemonicParsing="false" text="Topicos avanzados de programación">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></CheckBox>
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <children>
-                  <CheckBox mnemonicParsing="false" text="Atención Psicologica" />
-                  <CheckBox mnemonicParsing="false" text="Servicio Médico" />
-                  <CheckBox mnemonicParsing="false" text="Servicio Social" />
-                  <CheckBox mnemonicParsing="false" text="Asesorias" />
+                  <CheckBox fx:id="cbPsychology" mnemonicParsing="false" text="Asistencia Psicologica" />
+                  <CheckBox fx:id="cbMedical" mnemonicParsing="false" text="Asistencia Médica" />
+                  <CheckBox fx:id="cbSocialService" mnemonicParsing="false" text="Asistencia en Servicio Social" />
+                  <CheckBox fx:id="cbCounseling" mnemonicParsing="false" text="Asistencia en Consejería Académica" />
                </children>
             </VBox>
+            <Label text="Llave del grupo: " GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtKeyGroup" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Pane prefHeight="109.0" prefWidth="348.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <children>
+                  <TextField fx:id="txtElectronicsQualification" layoutX="14.0" layoutY="27.0" prefHeight="25.0" prefWidth="71.0" />
+                  <TextField fx:id="txtAdvancedTopicsQ" layoutX="14.0" layoutY="52.0" prefHeight="25.0" prefWidth="71.0" />
+                  <TextField fx:id="txtIDDatabase" layoutX="100.0" layoutY="2.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtIDElectronics" layoutX="100.0" layoutY="27.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtIDAdvancedTopics" layoutX="100.0" layoutY="52.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtNManagerDatabase" layoutX="183.0" layoutY="2.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtNManagerElectronics" layoutX="183.0" layoutY="27.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtNManagerAdvancedTopics" layoutX="183.0" layoutY="52.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtUnitDatabase" layoutX="242.0" layoutY="2.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtUnitElectronics" layoutX="242.0" layoutY="27.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtUnitAdvancedTopics" layoutX="242.0" layoutY="52.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtPeriodDatabase" layoutX="298.0" layoutY="2.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtPeriodElectronics" layoutX="298.0" layoutY="27.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtPeriodAdvancedTopics" layoutX="298.0" layoutY="52.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtIdManagerDatabase" layoutX="352.0" layoutY="2.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtIdManagerElectronics" layoutX="352.0" layoutY="27.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtIdManagerAdvancedTopics" layoutX="352.0" layoutY="52.0" prefHeight="25.0" prefWidth="43.0" />
+                  <TextField fx:id="txtDatabaseQualification" layoutX="14.0" layoutY="2.0" prefHeight="25.0" prefWidth="71.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <children>
+                  <HBox alignment="BOTTOM_CENTER" layoutX="-2.0" layoutY="14.0" prefHeight="100.0" prefWidth="409.0">
+                     <children>
+                        <Label text="Calificación">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="id Curso">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="No.Profesor">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Unidad">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Periodo">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" text="id.Prof..">
+                           <font>
+                              <Font name="System Bold Italic" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
          </children>
       </GridPane>
-      <Button layoutX="280.0" layoutY="429.0" mnemonicParsing="false" onAction="#addStudent" text="Agregar" />
+      <Button layoutX="483.0" layoutY="562.0" mnemonicParsing="false" onAction="#addStudent" text="Agregar" />
    </children>
 </AnchorPane>

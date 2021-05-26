@@ -24,10 +24,10 @@ public class StudentServicesImplement implements StudentServices {
     public void addStudent(Student student) {
         if(student == null)
             throw new RuntimeException("Student cannot be null");
-//idStudent | nameStudent | reasonForDisapproval  | totalAvarage | canalization | groupS | grade | idManager
+
         connection = DAO.getConnection();
         try {
-            ps = connection.prepareStatement("INSERT INTO Students(idStudent, nameStudent, reasonForDisapproval, totalAvarage, canalization, groupS, grade, idManager) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+            ps = connection.prepareStatement("INSERT INTO Students(idStudent, nameStudent, reasonForDisapproval, totalAverage, canalization, groupS, grade, idManager) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, student.getTuition());
             ps.setString(2, student.getNameStudent());
             ps.setString(3, student.getReasonForDisapproval());
@@ -48,17 +48,22 @@ public class StudentServicesImplement implements StudentServices {
     }
 
     @Override
-    public void deleteStudent(String enrollment) throws SQLException {
-        if(enrollment.isBlank())
+    public void deleteStudent(String tuition)  {
+        if(tuition.isBlank())
             throw new RuntimeException("Student cannot be null");
 
         connection = DAO.getConnection();
-        ps = connection.prepareStatement("DELETE FROM Student WHERE enrollment=?");
-        ps.setString(1, enrollment);
-        int result = ps.executeUpdate();
+        try {
+            ps = connection.prepareStatement("DELETE FROM Students WHERE idStudent=?");
+            ps.setString(1, tuition);
+            int result = ps.executeUpdate();
 
-        if(result > 0)
-            System.out.println("Student successfully deleted");
+            if(result > 0)
+                System.out.println("Student successfully deleted");
+            DAO.close(connection, ps, rs);
+        } catch (SQLException e) {
+            System.out.println("Error"+ e.getMessage());
+        }
     }
 
     @Override
@@ -86,7 +91,7 @@ public class StudentServicesImplement implements StudentServices {
             Integer key = 1;
             while(rs.next())
                 studentsList.put(key++, new Student(rs.getString("idStudent"), rs.getString("nameStudent"),
-                        rs.getString("reasonForDisapproval"), rs.getDouble("totalAvarage"), rs.getBoolean("canalization"),
+                        rs.getString("reasonForDisapproval"), rs.getDouble("totalAverage"), rs.getBoolean("canalization"),
                         rs.getString("groupS"), rs.getInt("grade"), rs.getString("idManager")));
 
             DAO.close(connection, ps, rs);

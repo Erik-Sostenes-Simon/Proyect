@@ -8,7 +8,6 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 import javafx.scene.Node;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
 import org.proyect.App;
 

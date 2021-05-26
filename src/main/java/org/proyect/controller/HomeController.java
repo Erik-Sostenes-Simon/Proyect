@@ -1,14 +1,9 @@
 package org.proyect.controller;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.fxml.FXML;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import org.proyect.App;
 
 import java.io.IOException;
@@ -29,14 +24,9 @@ public class HomeController implements Initializable {
     @FXML
     public void showViewAddStudent(ActionEvent event) throws IOException {
         App.setRoot("addStudent");
-        /*FXMLLoader loader = App.loadFXMlView("addStudent");
-        Parent root = loader.load();
-
-        AddStudentController addStudentController = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(scene);
-        stage.showAndWait();*/
+    }
+    @FXML
+    public void showViewDeleteStudent(ActionEvent event) throws IOException {
+        App.setRoot("deleteStudent");
     }
 }

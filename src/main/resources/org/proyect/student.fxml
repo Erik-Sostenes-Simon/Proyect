@@ -26,18 +26,21 @@
          <children>
             <HBox alignment="CENTER" layoutX="196.0" layoutY="1.0" prefHeight="41.0" prefWidth="689.0" spacing="65.0" style="-fx-background-color: #1567CE;">
                <children>
-                  <Label fx:id="lblGroup" textFill="#e7e5e5">
+                  <Label fx:id="lblGroup" text="A" textFill="#e7e5e5">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="50.0" />
+                        <Insets left="10.0" />
                      </HBox.margin>
                      <padding>
                         <Insets left="-20.0" />
                      </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </Label>
-                  <Label fx:id="lblGrade" textFill="#e7e5e5">
+                  <Label fx:id="lblGrade" text="4" textFill="#e7e5e5">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>
@@ -48,7 +51,7 @@
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="lblTuition" textFill="#e7e5e5">
+                  <Label fx:id="lblTuition" text="19011125" textFill="#e7e5e5">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>
@@ -59,7 +62,7 @@
                         <Insets left="25.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="lblTotalAverage" textFill="#e7e5e5">
+                  <Label fx:id="lblTotalAverage" text="80" textFill="#e7e5e5">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>
@@ -67,7 +70,7 @@
                         <Insets left="10.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="lblCanalization" textFill="#e7e5e5">
+                  <Label fx:id="lblCanalization" text="True" textFill="#e7e5e5">
                      <font>
                         <Font name="System Bold Italic" size="15.0" />
                      </font>

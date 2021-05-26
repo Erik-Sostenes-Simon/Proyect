@@ -14,19 +14,24 @@ import java.util.ResourceBundle;
 public class DialogStudentController implements Initializable {
     @FXML
     private GridPane gridCourses;
+    @FXML
+    private Label lblNameStudent;
     private CourseServicesImplement courseServicesImplement;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
-    public void initCourses(String idStudent) {
+    public void initCourses(String idStudent, String nameStudent) {
         courseServicesImplement = new CourseServicesImplement();
+        lblNameStudent.setText(nameStudent);
         List<Course> courses = courseServicesImplement.getByIdCourse(idStudent);
         byte key = 1;
         for(Course c : courses)
-            gridCourses.addRow(key++, new Label(c.getNameCourse()),
-                    new Label(c.getQualification()+""),
-                    new Label(c.getEvaluationUnit()+""));
+            gridCourses.addRow(key++, new Label(c.getIdCourse()),
+                    new Label(c.getNameCourse()), new Label(c.getNameManager()),
+                    new Label(c.getEvaluationUnit()+""),  new Label(c.getKeyGroup()),
+                    new Label(c.getPeriodC()), new Label(c.getQualification()+""),
+            new Label(c.getIdStudent()), new Label(c.getIdManager()));
     }
 }

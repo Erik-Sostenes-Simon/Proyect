@@ -1,27 +1,34 @@
 package org.proyect.model;
 
-import static java.lang.String.format;
 
 public class Course {
-    private Integer key;
-    private String nameTeacher;
+    private String idCourse;
     private String nameCourse;
+    private String nameManager;
     private Integer evaluationUnit;
+    private String keyGroup;
+    private String periodC;
     private Double qualification;
+    private String idStudent;
+    private String idManager;
 
-    public Course(){}
-    public Course(String nameCourse, Double qualification,  Integer evaluationUnit) {
+    public Course(String idCourse, String nameCourse, String nameManager, Integer evaluationUnit, String keyGroup, String periodC, Double qualification, String idStudent, String idManager) {
+        this.idCourse = idCourse;
         this.nameCourse = nameCourse;
-        this.qualification = qualification;
+        this.nameManager = nameManager;
         this.evaluationUnit = evaluationUnit;
+        this.keyGroup = keyGroup;
+        this.periodC = periodC;
+        this.qualification = qualification;
+        this.idStudent = idStudent;
+        this.idManager = idManager;
+    }
+    public String getIdCourse() {
+        return idCourse;
     }
 
-    public Integer getKey() {
-        return key;
-    }
-
-    public void setKey(Integer key) {
-        this.key = key;
+    public void setIdCourse(String idCourse) {
+        this.idCourse = idCourse;
     }
 
     public String getNameCourse() {
@@ -32,19 +39,12 @@ public class Course {
         this.nameCourse = nameCourse;
     }
 
-    public Double getQualification() {
-        return qualification;
+    public String getNameManager() {
+        return nameManager;
     }
 
-    public void setQualification(Double qualification) {
-        this.qualification = qualification;
-    }
-    public String getNameTeacher() {
-        return nameTeacher;
-    }
-
-    public void setNameTeacher(String nameTeacher) {
-        this.nameTeacher = nameTeacher;
+    public void setNameManager(String nameManager) {
+        this.nameManager = nameManager;
     }
 
     public Integer getEvaluationUnit() {
@@ -54,8 +54,58 @@ public class Course {
     public void setEvaluationUnit(Integer evaluationUnit) {
         this.evaluationUnit = evaluationUnit;
     }
+
+    public String getKeyGroup() {
+        return keyGroup;
+    }
+
+    public void setKeyGroup(String keyGroup) {
+        this.keyGroup = keyGroup;
+    }
+
+    public String getPeriodC() {
+        return periodC;
+    }
+
+    public void setPeriodC(String periodC) {
+        this.periodC = periodC;
+    }
+
+    public Double getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(Double qualification) {
+        this.qualification = qualification;
+    }
+
+    public String getIdStudent() {
+        return idStudent;
+    }
+
+    public void setIdStudent(String idStudent) {
+        this.idStudent = idStudent;
+    }
+
+    public String getIdManager() {
+        return idManager;
+    }
+
+    public void setIdManager(String idManager) {
+        this.idManager = idManager;
+    }
     @Override
     public String toString() {
-      return format("Key: %d, Name Course: %s, Qualification: %f, Name Teacher: %s", key, nameCourse, qualification, nameTeacher);
+        return "Course{" +
+                "idCourse='" + idCourse + '\'' +
+                ", nameCourse='" + nameCourse + '\'' +
+                ", nameManager='" + nameManager + '\'' +
+                ", evaluationUnit=" + evaluationUnit +
+                ", keyGroup='" + keyGroup + '\'' +
+                ", periodC='" + periodC + '\'' +
+                ", qualification=" + qualification +
+                ", idStudent='" + idStudent + '\'' +
+                ", idManager='" + idManager + '\'' +
+                '}';
     }
 }

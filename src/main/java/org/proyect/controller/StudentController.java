@@ -43,13 +43,13 @@ public class StudentController implements Initializable {
         txtReasonForDisapproval.setText(student.getReasonForDisapproval());
     }
     private String validateAssistance(String assistance) {
-        return assistance.isEmpty() ? "No" :"Si";
+        return assistance != null? "SI" :"NO";
     }
     public void editStudent(ActionEvent event) throws IOException {
         FXMLLoader loader = App.loadFXMlView("dialogStudent");
         Parent root = loader.load();
         DialogStudentController dialogStudentController = loader.getController();
-        dialogStudentController.initCourses(lblTuition.getText());
+        dialogStudentController.initCourses(lblTuition.getText(), lblNameStudent.getText());
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(root));

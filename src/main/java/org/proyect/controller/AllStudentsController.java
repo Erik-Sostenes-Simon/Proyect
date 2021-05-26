@@ -9,8 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import org.proyect.App;
 import org.proyect.model.Student;
-import org.proyect.services.AssistanceServicesImplement;
 import org.proyect.services.StudentServicesImplement;
+import org.proyect.services.AssistanceServicesImplement;
 
 import java.io.IOException;
 import java.net.URL;
