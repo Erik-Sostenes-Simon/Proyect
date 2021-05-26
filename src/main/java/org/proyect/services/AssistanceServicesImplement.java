@@ -56,8 +56,20 @@ public class AssistanceServicesImplement implements AssistanceServices{
     }
 
     @Override
-    public void deleteByIdAssistance() {
+    public void deleteByIdAssistance(String tuition) {
+        try{
+            Connection connection = DAO.getConnection();
+            ps = connection.prepareStatement("DELETE FROM Assists WHERE idStudent = ?");
+            ps.setString(1, tuition);
 
+            int result = ps.executeUpdate();
+
+            if(result > 0)
+                System.out.println("Assistance successfully deleted");
+            DAO.close(connection, ps, rs);
+        }catch(SQLException e){
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error {0}", e.getMessage());
+        }
     }
 
     private void loadAssistance(String assistance1){
