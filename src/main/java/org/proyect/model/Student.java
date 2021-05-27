@@ -24,6 +24,15 @@ public class Student {
         this.grade = grade;
         this.idManager = idManager;
     }
+    public Student(String tuition, String nameStudent, String reasonForDisapproval, Double totalAverage, Boolean canalization, String group, Integer grade) {
+        this.tuition = tuition;
+        this.nameStudent = nameStudent;
+        this.reasonForDisapproval = reasonForDisapproval;
+        this.totalAverage = totalAverage;
+        this.canalization = canalization;
+        this.group = group;
+        this.grade = grade;
+    }
     public String getTuition() {
         return tuition;
     }

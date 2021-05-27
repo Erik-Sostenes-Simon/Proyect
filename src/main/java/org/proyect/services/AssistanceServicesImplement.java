@@ -17,8 +17,21 @@ public class AssistanceServicesImplement implements AssistanceServices{
 
     {assistance = new Assistance();}
     @Override
-    public void updateAssistance(String tuition, Assistance assistance) {
-        connection = DAO.getConnection();
+    public void updateAssistance(String tuition,  String assistance1) {
+        try{
+            connection = DAO.getConnection();
+            ps = connection.prepareStatement("UPDATE Assists SET nameAssistance=?, idStudent=? WHERE idStudent=?");
+            ps.setString(1, assistance1);
+            ps.setString(2, tuition);
+            ps.setString(3, tuition);
+            int result = ps.executeUpdate();
+
+            if(result > 0)
+                System.out.println("Assistance successfully updated");
+            DAO.close(connection, ps, rs);
+        } catch (SQLException e) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error2 {0}", e.getMessage());
+        }
     }
     // nameAssistance    | idStudent
     @Override

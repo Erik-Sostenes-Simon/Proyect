@@ -16,8 +16,6 @@
                 <TabPane fx:id="tabPaneViewStudents" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
                     <tabs>
                         <Tab fx:id="tabViewStudents" style="-fx-background-color: #2a73ff;" text="Tabla de alumnos" />
-                        <Tab fx:id="tabApprovedStudents" style="-fx-background-color: #979A9A;" text="Alumnos Aprovados" />
-                        <Tab fx:id="tabFailedStudents" style="-fx-background-color: #2a73ff;" text="Alumnos Reprovados" />
                     </tabs>
                 </TabPane>
             </center>
@@ -40,14 +38,7 @@
                             </VBox.margin>
                             <font>
                                 <Font size="12.0" />
-                            </font>
-                     <graphic>
-                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../../../Desktop/student.png" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
+                            </font></Button>
                         <Button mnemonicParsing="false" onAction="#showViewDeleteStudent" prefHeight="110.0" prefWidth="218.0" style="-fx-background-color: #7E8382;" text="Eliminar alumno" textFill="#fff9f9">
                             <VBox.margin>
                                 <Insets bottom="10.0" />
@@ -55,16 +46,9 @@
                             <font>
                                 <Font size="12.0" />
                             </font></Button>
-                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="216.0" style="-fx-background-color: #7E8382;" text="Editar Alumno" textFill="#fcf1f1">
+                        <Button mnemonicParsing="false" onAction="#updateStudent" prefHeight="110.0" prefWidth="216.0" style="-fx-background-color: #7E8382;" text="Editar Alumno" textFill="#fcf1f1">
                             <VBox.margin>
                                 <Insets bottom="10.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font size="12.0" />
-                            </font></Button>
-                        <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="214.0" style="-fx-background-color: #7E8382;" text="Estadisticas" textFill="#fcf6f6">
-                            <VBox.margin>
-                                <Insets />
                             </VBox.margin>
                             <font>
                                 <Font size="12.0" />

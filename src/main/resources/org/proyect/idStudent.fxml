@@ -6,9 +6,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.proyect.IdStudent"
-            prefHeight="400.0" prefWidth="600.0" >
 
+<AnchorPane prefHeight="138.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.IdStudentController">
+   <children>
+      <Button layoutX="155.0" layoutY="101.0" mnemonicParsing="false" onAction="#showProfileStudent" text="Perfil" />
+      <Label layoutX="40.0" layoutY="14.0" text="Ingresa la matricula del studiante que deseas actualizar" />
+      <TextField fx:id="idStudent" layoutX="102.0" layoutY="64.0" />
+   </children>
 </AnchorPane>

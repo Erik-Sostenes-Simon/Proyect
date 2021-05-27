@@ -12,13 +12,11 @@ import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
     @FXML
-    private Tab tabViewStudents, tabApprovedStudents, tabFailedStudents;
+    private Tab tabViewStudents;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
       tabViewStudents.setContent(App.loadView("allStudents.fxml"));
-      tabApprovedStudents.setContent(App.loadView("approvedStudents.fxml"));
-      tabFailedStudents.setContent(App.loadView("failedStudents.fxml"));
     }
 
     @FXML
@@ -28,5 +26,9 @@ public class HomeController implements Initializable {
     @FXML
     public void showViewDeleteStudent(ActionEvent event) throws IOException {
         App.setRoot("deleteStudent");
+    }
+    @FXML
+    public void updateStudent(ActionEvent event) throws IOException {
+        App.setRoot("idStudent");
     }
 }

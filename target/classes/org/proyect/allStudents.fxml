@@ -76,7 +76,7 @@
                   </VBox>
                   <Button mnemonicParsing="false" onAction="#searchStudent" prefHeight="33.0" prefWidth="202.0" style="-fx-background-color: #1B4F72;" text="Buscar" textFill="#fcf9f9">
                      <graphic>
-                        <TextField fx:id="txtSearchProduct" prefHeight="25.0" prefWidth="124.0" />
+                        <TextField fx:id="txtSearchStudent" prefHeight="25.0" prefWidth="124.0" />
                      </graphic>
                      <font>
                         <Font size="12.0" />

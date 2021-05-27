@@ -43,7 +43,7 @@ public class StudentController implements Initializable {
         txtReasonForDisapproval.setText(student.getReasonForDisapproval());
     }
     private String validateAssistance(String assistance) {
-        return assistance != null? "SI" :"NO";
+        return assistance == null ? "NO" :"SI";
     }
     public void editStudent(ActionEvent event) throws IOException {
         FXMLLoader loader = App.loadFXMlView("dialogStudent");

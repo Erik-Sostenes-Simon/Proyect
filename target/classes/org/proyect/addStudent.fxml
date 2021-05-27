@@ -140,80 +140,201 @@
             <TextField fx:id="txtKeyGroup" GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <Pane prefHeight="109.0" prefWidth="348.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <children>
-                  <TextField fx:id="txtElectronicsQualification" layoutX="14.0" layoutY="27.0" prefHeight="25.0" prefWidth="71.0" />
-                  <TextField fx:id="txtAdvancedTopicsQ" layoutX="14.0" layoutY="52.0" prefHeight="25.0" prefWidth="71.0" />
-                  <TextField fx:id="txtIDDatabase" layoutX="100.0" layoutY="2.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtIDElectronics" layoutX="100.0" layoutY="27.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtIDAdvancedTopics" layoutX="100.0" layoutY="52.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtNManagerDatabase" layoutX="183.0" layoutY="2.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtNManagerElectronics" layoutX="183.0" layoutY="27.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtNManagerAdvancedTopics" layoutX="183.0" layoutY="52.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtUnitDatabase" layoutX="242.0" layoutY="2.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtUnitElectronics" layoutX="242.0" layoutY="27.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtUnitAdvancedTopics" layoutX="242.0" layoutY="52.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtPeriodDatabase" layoutX="298.0" layoutY="2.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtPeriodElectronics" layoutX="298.0" layoutY="27.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtPeriodAdvancedTopics" layoutX="298.0" layoutY="52.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtIdManagerDatabase" layoutX="352.0" layoutY="2.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtIdManagerElectronics" layoutX="352.0" layoutY="27.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtIdManagerAdvancedTopics" layoutX="352.0" layoutY="52.0" prefHeight="25.0" prefWidth="43.0" />
-                  <TextField fx:id="txtDatabaseQualification" layoutX="14.0" layoutY="2.0" prefHeight="25.0" prefWidth="71.0" />
+                  <Label layoutX="12.0" layoutY="3.0" text="Periodo">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="12.0" layoutY="28.0" text="Periodo">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="12.0" layoutY="55.0" text="Periodo">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="txtPeriodDatabase" layoutX="77.0" />
+                  <TextField fx:id="txtPeriodAdvancedTopics" layoutX="77.0" layoutY="52.0" />
+                  <TextField fx:id="txtPeriodElectronics" layoutX="77.0" layoutY="25.0" />
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
                <children>
-                  <HBox alignment="BOTTOM_CENTER" layoutX="-2.0" layoutY="14.0" prefHeight="100.0" prefWidth="409.0">
-                     <children>
-                        <Label text="Calificación">
-                           <font>
-                              <Font name="System Bold Italic" size="13.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label text="id Curso">
-                           <font>
-                              <Font name="System Bold Italic" size="13.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label text="No.Profesor">
-                           <font>
-                              <Font name="System Bold Italic" size="13.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label text="Unidad">
-                           <font>
-                              <Font name="System Bold Italic" size="13.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label text="Periodo">
-                           <font>
-                              <Font name="System Bold Italic" size="13.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                        <Label alignment="CENTER_RIGHT" text="id.Prof..">
-                           <font>
-                              <Font name="System Bold Italic" size="13.0" />
-                           </font>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </Label>
-                     </children>
-                  </HBox>
+                  <Accordion layoutX="3.0" prefHeight="160.0" prefWidth="409.0">
+                    <panes>
+                      <TitledPane animated="false" text="Base de datos">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="Calificación">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label layoutX="1.0" layoutY="33.0" text="Id del Curso">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="txtDatabaseQualification" layoutX="93.0" layoutY="-3.0" prefHeight="25.0" prefWidth="71.0" />
+                                    <TextField fx:id="txtIDDatabase" layoutX="107.0" layoutY="30.0" prefHeight="25.0" prefWidth="43.0" />
+                                    <Label layoutX="1.0" layoutY="61.0" text="Nombre del profesor">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="txtNManagerDatabase" layoutX="143.0" layoutY="58.0" prefHeight="25.0" prefWidth="89.0" />
+                                    <Label layoutX="252.0" layoutY="5.0" text="Unidad">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="txtUnitDatabase" layoutX="320.0" layoutY="2.0" prefHeight="25.0" prefWidth="71.0" />
+                                    <Label alignment="CENTER_RIGHT" layoutX="252.0" layoutY="33.0" text="Matricula de profesor">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="txtIdManagerDatabase" layoutX="266.0" layoutY="58.0" prefHeight="25.0" prefWidth="125.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="Electrónica">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" layoutX="215.0" layoutY="33.0" text="Matricula de profesor">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label layoutX="215.0" layoutY="5.0" text="Unidad">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label layoutY="61.0" text="Nombre del profesor">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label layoutX="1.0" layoutY="33.0" text="Id del Curso">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label layoutY="5.0" text="Calificación">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="txtElectronicsQualification" layoutX="103.0" layoutY="2.0" prefHeight="25.0" prefWidth="71.0" />
+                                    <TextField fx:id="txtIDElectronics" layoutX="108.0" layoutY="30.0" prefHeight="25.0" prefWidth="43.0" />
+                                    <TextField fx:id="txtNManagerElectronics" layoutX="139.0" layoutY="58.0" prefHeight="25.0" prefWidth="79.0" />
+                                    <TextField fx:id="txtUnitElectronics" layoutX="286.0" layoutY="2.0" prefHeight="25.0" prefWidth="116.0" />
+                                    <TextField fx:id="txtIdManagerElectronics" layoutX="227.0" layoutY="58.0" prefHeight="25.0" prefWidth="136.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="Topicos avanzados de programación">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" layoutX="248.0" layoutY="33.0" text="Matricula del Profesor">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label layoutX="248.0" layoutY="5.0" text="Unidad">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label layoutY="61.0" text="Nombre del Profesor">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label layoutY="33.0" text="id Curso">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label layoutY="5.0" text="Calificación">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="txtAdvancedTopicsQ" layoutX="101.0" layoutY="2.0" prefHeight="25.0" prefWidth="71.0" />
+                                    <TextField fx:id="txtIDAdvancedTopics" layoutX="101.0" layoutY="30.0" prefHeight="25.0" prefWidth="43.0" />
+                                    <TextField fx:id="txtNManagerAdvancedTopics" layoutX="144.0" layoutY="58.0" prefHeight="25.0" prefWidth="104.0" />
+                                    <TextField fx:id="txtUnitAdvancedTopics" layoutX="311.0" layoutY="2.0" prefHeight="25.0" prefWidth="76.0" />
+                                    <TextField fx:id="txtIdManagerAdvancedTopics" layoutX="260.0" layoutY="58.0" prefHeight="25.0" prefWidth="136.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
                </children>
             </Pane>
          </children>

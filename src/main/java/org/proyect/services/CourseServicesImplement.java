@@ -16,8 +16,31 @@ public class CourseServicesImplement implements CourseServices{
     private List<Course> courses;
     {courses = new ArrayList<>();}
     @Override
-    public void updateCourse(String enrollment, Course course) {
+    public void updateCourse(String tuition, Course course) {
+        try{
+            Connection connection = DAO.getConnection();
+            ps = connection.prepareStatement("UPDATE Courses SET idCourse=?, nameCourse=?,  nameManager=?,  evaluationUnit=?," +
+                    "keyGroup=?, periodC=?, qualification=?, idStudent=?, idManager=? WHERE idStudent=? ");
+            ps.setString(1, course.getIdCourse());
+            ps.setString(2,course.getNameCourse());
+            ps.setString(3, course.getNameManager());
+            ps.setInt(4, course.getEvaluationUnit());
+            ps.setString(5, course.getKeyGroup());
+            ps.setString(6, course.getPeriodC());
+            ps.setDouble(7, course.getQualification());
+            ps.setString(8, course.getIdStudent());
+            ps.setString(9, course.getIdManager());
+            ps.setString(10, tuition);
 
+            int result = ps.executeUpdate();
+
+            if(result > 0)
+                System.out.println("Course successfully update");
+
+            DAO.close(connection, ps, rs);
+        }catch(Exception ex) {
+            System.out.println("Error"+ ex.getMessage());
+        }
     }
     @Override
     public List<Course> getByIdCourse(String tuition) {
@@ -66,6 +89,7 @@ public class CourseServicesImplement implements CourseServices{
             System.out.println("Error"+ ex.getMessage());
         }
     }
+
     @Override
     public void deleteCourse(String tuition) {
         Connection connection = DAO.getConnection();

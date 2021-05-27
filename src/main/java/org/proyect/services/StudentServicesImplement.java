@@ -44,7 +44,6 @@ public class StudentServicesImplement implements StudentServices {
         } catch (SQLException e) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error {0}", e.getMessage());
         }
-
     }
 
     @Override
@@ -68,17 +67,29 @@ public class StudentServicesImplement implements StudentServices {
 
     @Override
     public void updateStudent(String enrollment, Student student) throws SQLException {
-        if(enrollment.isBlank())
+        if(student == null)
             throw new RuntimeException("Student cannot be null");
+
         connection = DAO.getConnection();
-        ps = connection.prepareStatement("UPDATE Student SET enrollment=?, nameStudent=? WHERE enrollment");
-        ps.setString(1, student.getTuition());
-        ps.setString(2, enrollment);
+        try {
+            ps = connection.prepareStatement("UPDATE Students SET idStudent=?, nameStudent=?, reasonForDisapproval=?, totalAverage=?, canalization=?, groupS=?, grade=?, idManager=? WHERE idStudent=?");
+            ps.setString(1, student.getTuition());
+            ps.setString(2, student.getNameStudent());
+            ps.setString(3, student.getReasonForDisapproval());
+            ps.setDouble(4, student.getTotalAverage());
+            ps.setBoolean(5, student.getCanalization());
+            ps.setString(6, student.getGroup());
+            ps.setInt(7, student.getGrade());
+            ps.setString(8, student.getIdManager());
+            ps.setString(9, student.getTuition());
+            int result = ps.executeUpdate();
 
-        int result = ps.executeUpdate();
-
-        if(result > 0)
-            System.out.println("Student successfully updated");
+            if(result > 0)
+                System.out.println("Student successfully update");
+            DAO.close(connection, ps, rs);
+        } catch (SQLException e) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error {0}", e.getMessage());
+        }
 
     }
 
@@ -102,12 +113,25 @@ public class StudentServicesImplement implements StudentServices {
     }
     //you get a student for his tuition
     @Override
-    public Student getByIdStudent(String enrollment) throws SQLException {
-        if(enrollment.isBlank())
+    public Student getByIdStudent(String tuition){
+        Student student = null;
+        if(tuition.isBlank())
             throw new RuntimeException("Student cannot be null");
         connection = DAO.getConnection();
-        ps = connection.prepareStatement("SELECT * FROM Student");
-        rs = ps.executeQuery();
-        return null;
+        try {
+            ps = connection.prepareStatement("SELECT * FROM Students WHERE idStudent = ?");
+            ps.setString(1, tuition);
+            rs = ps.executeQuery();
+
+            while(rs.next())
+                student = new Student(rs.getString("idStudent"), rs.getString("nameStudent"), rs.getString("reasonForDisapproval"),
+                        Double.valueOf(rs.getString("totalAverage")), Boolean.valueOf(rs.getString("canalization")),
+                        rs.getString("groupS"), Integer.valueOf(rs.getString("grade")), rs.getString("idManager"));
+
+            DAO.close(connection, ps, rs);
+        } catch (SQLException e) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error {0}", e.getMessage());
+        }
+        return student;
     }
 }
