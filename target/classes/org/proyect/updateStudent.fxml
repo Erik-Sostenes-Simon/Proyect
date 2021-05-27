@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="316.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.UpdateStudentController">
+   <children>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="321.0" prefWidth="1100.0" spacing="5.0" style="-fx-background-color: white;">
+         <children>
+            <Pane prefHeight="42.0" prefWidth="1080.0">
+               <children>
+                  <Label fx:id="lblNu" layoutX="14.0" layoutY="1.0" prefHeight="27.0" prefWidth="40.0" text="N." textAlignment="CENTER" textFill="#ff596c">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNameStudent" layoutX="54.0" layoutY="3.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="46.0" prefWidth="1080.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="196.0" layoutY="1.0" prefHeight="41.0" prefWidth="689.0" spacing="65.0" style="-fx-background-color: #1567CE;">
+                     <children>
+                        <TextField fx:id="txtGroup" />
+                        <TextField fx:id="txtGrade" />
+                        <TextField fx:id="txtTuition" />
+                        <TextField fx:id="txtTotalAverage" />
+                        <TextField fx:id="txtCanalization" />
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="633.0" spacing="80.0" style="-fx-background-color: #A569BD;">
+               <children>
+                  <Label text="Asesorias" textFill="#e7e5e5">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Atención Psicologica" textFill="#e7e5e5">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Servicio Médico" textFill="#e7e5e5" />
+                  <Label text="Servicio Social" textFill="#e7e5e5" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="39.0" prefWidth="633.0" spacing="80.0" style="-fx-border-color: #A569BD;">
+               <children>
+                  <Label fx:id="lblCounseling" textFill="#252525">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="17.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="lblPsychology" textFill="#222121">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="55.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="lblMedical" textFill="#171717">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="70.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="lblSocial" textFill="#282727">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="65.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Label prefHeight="27.0" prefWidth="168.0" text="Motivo Reprovación" textFill="#eb6969">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtReasonForDisapproval" prefHeight="81.0" prefWidth="1080.0">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </TextArea>
+            <Button mnemonicParsing="false" onAction="#profileStudent" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #797D7F;" text="Perfil" textFill="#f5ecec">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="10.0" prefWidth="1080.0" style="-fx-background-color: black;" />
+            <Button mnemonicParsing="false" onAction="#updateStudent" prefHeight="25.0" prefWidth="210.0" style="-fx-background-color: #797D7F;" text="Actualizar" textFill="#f5ecec">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
