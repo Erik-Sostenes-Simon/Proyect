@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="664.0" prefWidth="927.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.AllStudentsController">
+   <children>
+      <VBox alignment="CENTER_RIGHT" prefHeight="584.0" prefWidth="927.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label style="-fx-background-color: tomato; -fx-border-radius: 10;" text="Registro de Estudiantes" textFill="#f4f5f4">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets right="350.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="119.0" prefWidth="887.0" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="76.0" prefWidth="108.0">
+                     <children>
+                        <Label text="0" textFill="#2a73ff">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Label text="Total alumnos" textFill="#1256dd">
+                           <font>
+                              <Font name="System Bold Italic" size="11.0" />
+                           </font></Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="0" textFill="#26bfbc">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Label text="Promedio General" textFill="#099e7b">
+                           <font>
+                              <Font name="System Bold Italic" size="11.0" />
+                           </font></Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="0" textFill="#fa5f7e">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Label text="Aprovados" textFill="#e11175">
+                           <font>
+                              <Font name="System Bold Italic" size="11.0" />
+                           </font></Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="0" textFill="#de0000">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Label text="Reprovados" textFill="#bc1010">
+                           <font>
+                              <Font name="System Bold Italic" size="11.0" />
+                           </font></Label>
+                     </children>
+                  </VBox>
+                  <Button mnemonicParsing="false" onAction="#searchStudent" prefHeight="33.0" prefWidth="202.0" style="-fx-background-color: #1B4F72;" text="Buscar" textFill="#fcf9f9">
+                     <graphic>
+                        <TextField fx:id="txtSearchStudent" prefHeight="25.0" prefWidth="124.0" />
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#generatePDF" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: tomato;" text="Generar PDF" textFill="#f6f7f8">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="20.0" left="40.0" right="40.0" top="30.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+            <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#update" style="-fx-background-color: tomato;" text="Mostrar la lista de alumnos" textFill="#f6f7f8">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets right="70.0" />
+               </VBox.margin>
+            </Button>
+            <Pane prefHeight="69.0" prefWidth="927.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" layoutX="214.0" layoutY="7.0" prefHeight="55.0" prefWidth="689.0" spacing="65.0" style="-fx-background-color: #38D19E;">
+                     <children>
+                        <Label text="Grupo" textFill="#e7e5e5">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Grado" textFill="#e7e5e5">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Matricula" textFill="#e7e5e5">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Promedio" textFill="#e7e5e5">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="Canalización" textFill="#e7e5e5">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <ScrollPane prefHeight="366.0" prefWidth="927.0" style="-fx-background-color: white;">
+               <content>
+                  <VBox fx:id="vbxItemStudent" />
+               </content>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
