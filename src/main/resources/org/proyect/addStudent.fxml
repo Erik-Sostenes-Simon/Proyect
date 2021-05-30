@@ -8,15 +8,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="601.0" prefWidth="1025.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.AddStudentController">
+<AnchorPane prefHeight="601.0" prefWidth="1025.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.AddStudentController">
    <children>
       <GridPane layoutX="188.0" layoutY="119.0" prefHeight="414.0" prefWidth="618.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="98.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="142.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="151.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="219.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="409.0" minWidth="10.0" prefWidth="409.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="162.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="217.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="409.0" minWidth="10.0" prefWidth="403.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -90,7 +90,6 @@
                   <Insets left="10.0" />
                </padding>
             </Label>
-            <TextField fx:id="txtCanalization" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Matricula Tutor: " GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
@@ -174,7 +173,7 @@
                <children>
                   <Accordion layoutX="3.0" prefHeight="160.0" prefWidth="409.0">
                     <panes>
-                      <TitledPane animated="false" text="Base de datos">
+                      <TitledPane animated="false" prefHeight="105.0" prefWidth="395.0" text="Base de datos">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -227,7 +226,7 @@
                               </AnchorPane>
                         </content>
                       </TitledPane>
-                      <TitledPane animated="false" text="Electrónica">
+                      <TitledPane animated="false" prefHeight="110.0" prefWidth="398.0" text="Electrónica">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -337,8 +336,57 @@
                   </Accordion>
                </children>
             </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <TextField fx:id="txtCanalization" layoutY="42.0" prefHeight="25.0" prefWidth="143.0" />
+                  <Label layoutX="14.0" layoutY="78.0" text="true = si" />
+                  <Label layoutX="72.0" layoutY="78.0" text="false = no" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+               <children>
+                  <Label layoutX="14.0" layoutY="35.0" text="Base de datos">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="167.0" layoutY="14.0" text="Matriculas">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="168.0" layoutY="35.0" text="Electronica">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="280.0" layoutY="35.0" text="Topicos Avanzados">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="37.0" layoutY="55.0" text="ABCF">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="185.0" layoutY="55.0" text="ABCG">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="323.0" layoutY="55.0" text="ABCE">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
       </GridPane>
-      <Button layoutX="483.0" layoutY="562.0" mnemonicParsing="false" onAction="#addStudent" text="Agregar" />
+      <Button layoutX="483.0" layoutY="562.0" mnemonicParsing="false" onAction="#addStudent" text="Agregar">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

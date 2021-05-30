@@ -21,7 +21,8 @@ CREATE TABLE Students(
 );
 -- -- INSERT INTO Courses(idCourse, nameCourse, nameManager, evaluationUnit, keyGroup, periodC, qualification, idStudent, idManager) VALUES('BD', 'Base de Datos', 'Hector', 4, 'CuartoA', 'Cuarto', 50, '19011125', 'ABCD');
 CREATE TABLE Courses(
-                        idCourse VARCHAR(20) NOT NULL PRIMARY KEY,
+                        keyCourse INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                        idCourse VARCHAR(20),
                         nameCourse VARCHAR(45),
                         nameManager VARCHAR(60),
                         evaluationUnit INT,
@@ -36,16 +37,18 @@ CREATE TABLE Courses(
 CREATE TABLE ManagersHasCourses(
                                    idManagerHasCourse INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
                                    idManager VARCHAR(20),
-                                   idCourse VARCHAR(20),
+                                   keyCourse INT NOT NULL,
                                    FOREIGN KEY(idManager) REFERENCES  Managers(idManager),
-                                   FOREIGN KEY(idCourse) REFERENCES Courses(idCourse)
+                                   FOREIGN KEY(keyCourse) REFERENCES Courses(keyCourse)
 );
 
 ----INSERT INTO Assists(nameAssistance, idStudent) VALUES('Asistencia en Servicio Social', '19011125');
 CREATE TABLE Assists(
                             idAssistance INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                            nameAssistance VARCHAR(50),
+                            assistanceInAcademicCounseling VARCHAR(50),
+                            psychologyAssistance VARCHAR(50),
+                            medicalServiceAssistance VARCHAR(50),
+                            assistanceInSocialService VARCHAR(50),
                             idStudent VARCHAR(30),
                             FOREIGN KEY (idStudent) REFERENCES Students(idStudent)
 );
-

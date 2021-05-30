@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="185.0" prefWidth="423.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.DeleteStudentController">
    <children>
       <TextField fx:id="txtTuition" layoutX="137.0" layoutY="93.0" />
-      <Button layoutX="186.0" layoutY="136.0" mnemonicParsing="false" onAction="#deleteStudent" text="Button" />
+      <Button layoutX="177.0" layoutY="133.0" mnemonicParsing="false" onAction="#deleteStudent" style="-fx-background-color: tomato;" text="Eliminar" textFill="#f8f1f1">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Button>
       <Label layoutX="161.0" layoutY="21.0" text="Eliminar Estudiante" />
       <Label layoutX="159.0" layoutY="66.0" text="Ingresa la matricula " />
    </children>

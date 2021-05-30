@@ -16,7 +16,7 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-      tabViewStudents.setContent(App.loadView("allStudents.fxml"));
+      tabViewStudents.setContent(App.loadView("homeStudents.fxml"));
     }
 
     @FXML

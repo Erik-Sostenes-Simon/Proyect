@@ -17,13 +17,14 @@ import org.proyect.services.StudentServicesImplement;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class UpdateStudentController implements Initializable {
     @FXML
     private Label lblNu,lblCounseling, lblPsychology, lblMedical, lblSocial;
     @FXML
-    private TextField txtNameStudent, txtGroup, txtGrade, txtTuition, txtTotalAverage, txtCanalization;
+    private TextField txtNameStudent, txtGroup, txtGrade, txtTuition, txtCanalization, txtTotalAverage;
     @FXML
     private TextArea txtReasonForDisapproval;
     @FXML
@@ -33,10 +34,10 @@ public class UpdateStudentController implements Initializable {
         studentServicesImplement = new StudentServicesImplement();
     }
     @FXML
-    public void updateStudent(ActionEvent event) {
-        studentServicesImplement.addStudent(new Student(txtTuition.getText(), txtNameStudent.getText(),
-                txtReasonForDisapproval.getText(), Double.valueOf(txtTotalAverage.getText()), Boolean.valueOf(txtCanalization.getText()),
-                txtGroup.getText(), Integer.valueOf(txtGrade.getText())));
+    public void updateStudent(ActionEvent event) throws SQLException {
+        studentServicesImplement.updateStudent(txtTuition.getText(), new Student(txtTuition.getText(), txtNameStudent.getText(),
+                txtReasonForDisapproval.getText(), Double.valueOf(txtTotalAverage.getText()),
+                Boolean.valueOf(txtCanalization.getText()), txtGroup.getText(), Integer.valueOf(txtGrade.getText())));
     }
     public void setStudent(Student student, int n) {
         lblNu.setText("N."+n);

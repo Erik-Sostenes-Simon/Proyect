@@ -15,7 +15,7 @@
             <center>
                 <TabPane fx:id="tabPaneViewStudents" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
                     <tabs>
-                        <Tab fx:id="tabViewStudents" style="-fx-background-color: #2a73ff;" text="Tabla de alumnos" />
+                        <Tab fx:id="tabViewStudents" style="-fx-background-color: #2a73ff;" text="Lista de Alumnos" />
                     </tabs>
                 </TabPane>
             </center>

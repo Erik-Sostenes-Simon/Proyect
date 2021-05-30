@@ -5,19 +5,21 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.Node;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
 import org.proyect.model.Assistance;
 import org.proyect.model.Course;
 import org.proyect.model.Student;
 import org.proyect.services.CourseServicesImplement;
 import org.proyect.services.StudentServicesImplement;
 import org.proyect.services.AssistanceServicesImplement;
+import static java.lang.Math.round;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
+import java.util.Stack;
 
 public class AddStudentController implements Initializable {
     @FXML
@@ -45,43 +47,59 @@ public class AddStudentController implements Initializable {
     private StudentServicesImplement studentServicesImplement;
     private CourseServicesImplement courseServicesImplement;
     private AssistanceServicesImplement assistanceServicesImplement;
-    private Assistance assistance;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         studentServicesImplement = new StudentServicesImplement();
         assistanceServicesImplement = new AssistanceServicesImplement();
         courseServicesImplement = new CourseServicesImplement();
-        assistance = new Assistance();
         loadCmb();
+    }
+    public Double generalPrimed() {
+        Double database = 0D;
+        Double electronic = 0D;
+        Double topics = 0D;
+        if(!txtDatabaseQualification.getText().isBlank()) {
+           database = Double.parseDouble(txtDatabaseQualification.getText());
+        }
+        if(!txtElectronicsQualification.getText().isBlank()) {
+            electronic = Double.parseDouble(txtElectronicsQualification.getText());
+        }
+        if(!txtAdvancedTopicsQ.getText().isBlank()){
+            topics = Double.parseDouble(txtAdvancedTopicsQ.getText());
+        }
+        return (database+electronic+topics) / 3;
     }
     //idStudent, nameStudent, reasonForDisapproval, totalAverage, canalization, groupS, grade, idManager
     @FXML
     public void addStudent(ActionEvent event) {
+        Double totalQualification =  generalPrimed();
         studentServicesImplement.addStudent(new Student(txtTuition.getText(), txtNameStudent.getText(),
-                txtReasonForDisapproval.getText(), 70D, Boolean.valueOf(txtCanalization.getText()),
+                txtReasonForDisapproval.getText(), totalQualification, Boolean.valueOf(txtCanalization.getText()),
                 String.valueOf(cmbGroup.getSelectionModel().getSelectedIndex()+1),
                 cmbGrade.getSelectionModel().getSelectedIndex()+1, txtIdManager.getText()));
         getValueCheckBoxCourses();
         getValueCheckBoxAssists();
+        showAlertCreatedStudent(event);
+    }
+    @FXML
+    private void showAlertCreatedStudent(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Exito");
+        alert.setTitle("Info");
+        alert.setContentText("Estudiante creado correctamente");
+        alert.showAndWait();
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
     public void getValueCheckBoxAssists() {
-        if(cbCounseling.isSelected()){
-            assistance.setAssistanceInAcademicCounseling(cbCounseling.getText());
-            assistanceServicesImplement.addAssistance(txtTuition.getText(), assistance.getAssistanceInAcademicCounseling());
-        }
-        if(cbPsychology.isSelected()){
-            assistance.setPsychologyAssistance(cbPsychology.getText());
-            assistanceServicesImplement.addAssistance(txtTuition.getText(), assistance.getPsychologyAssistance());
-        }
-        if(cbMedical.isSelected()) {
-            assistance.setMedicalServiceAssistance(cbMedical.getText());
-            assistanceServicesImplement.addAssistance(txtTuition.getText(), assistance.getMedicalServiceAssistance());
-        }
-        if(cbSocialService.isSelected())  {
-            assistance.setAssistanceInSocialService(cbSocialService.getText());
-            assistanceServicesImplement.addAssistance(txtTuition.getText(), assistance.getAssistanceInSocialService());
-        }
+        if (!cbCounseling.isSelected()) cbCounseling.setText("");
+        if (!cbPsychology.isSelected()) cbPsychology.setText("");
+        if (!cbMedical.isSelected()) cbMedical.setText("");
+        if (!cbSocialService.isSelected()) cbSocialService.setText("");
+            assistanceServicesImplement.addAssistance(txtTuition.getText(), new Assistance(cbCounseling.getText(),
+                    cbPsychology.getText(), cbMedical.getText(), cbSocialService.getText()));
     }
     public void getValueCheckBoxCourses() {
         if(cbDatabase.isSelected())

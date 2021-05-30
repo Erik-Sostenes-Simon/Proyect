@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="316.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.proyect.controller.UpdateStudentController">
    <children>
-      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="321.0" prefWidth="1100.0" spacing="5.0" style="-fx-background-color: white;">
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="347.0" prefWidth="1100.0" spacing="5.0" style="-fx-background-color: white;">
          <children>
             <Pane prefHeight="42.0" prefWidth="1080.0">
                <children>
@@ -22,6 +22,44 @@
                   <TextField fx:id="txtNameStudent" layoutX="54.0" layoutY="3.0" />
                </children>
             </Pane>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="704.0" spacing="65.0" style="-fx-background-color: #38D19E;">
+               <children>
+                  <Label text="Grupo" textFill="#e7e5e5">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Grado" textFill="#e7e5e5">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Matricula" textFill="#e7e5e5">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Promedio" textFill="#e7e5e5">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Canalización" textFill="#e7e5e5">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
             <Pane prefHeight="46.0" prefWidth="1080.0">
                <children>
                   <HBox alignment="CENTER" layoutX="196.0" layoutY="1.0" prefHeight="41.0" prefWidth="689.0" spacing="65.0" style="-fx-background-color: #1567CE;">
@@ -29,7 +67,7 @@
                         <TextField fx:id="txtGroup" />
                         <TextField fx:id="txtGrade" />
                         <TextField fx:id="txtTuition" />
-                        <TextField fx:id="txtTotalAverage" />
+                        <TextField fx:id="txtTotalAverage" editable="false" />
                         <TextField fx:id="txtCanalization" />
                      </children>
                   </HBox>

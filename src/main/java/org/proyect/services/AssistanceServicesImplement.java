@@ -13,9 +13,8 @@ public class AssistanceServicesImplement implements AssistanceServices{
     private Connection connection;
     private PreparedStatement ps;
     private ResultSet rs;
-    private Assistance assistance;
 
-    {assistance = new Assistance();}
+
     @Override
     public void updateAssistance(String tuition,  String assistance1) {
         try{
@@ -35,12 +34,16 @@ public class AssistanceServicesImplement implements AssistanceServices{
     }
     // nameAssistance    | idStudent
     @Override
-    public void addAssistance(String tuition, String assistance1) {
+    public void addAssistance(String tuition, Assistance assistance1) {
         try{
             connection = DAO.getConnection();
-            ps = connection.prepareStatement("INSERT INTO Assists(nameAssistance, idStudent) VALUES(?, ?)");
-            ps.setString(1, assistance1);
-            ps.setString(2, tuition);
+            ps = connection.prepareStatement("INSERT INTO Assists(assistanceInAcademicCounseling, psychologyAssistance, " +
+                    " medicalServiceAssistance, assistanceInSocialService, idStudent) VALUES(?, ?, ?, ?, ?)");
+            ps.setString(1, assistance1.getAssistanceInAcademicCounseling());
+            ps.setString(2, assistance1.getPsychologyAssistance());
+            ps.setString(3, assistance1.getMedicalServiceAssistance());
+            ps.setString(4, assistance1.getAssistanceInSocialService());
+            ps.setString(5, tuition);
             int result = ps.executeUpdate();
 
             if(result > 0)
@@ -53,13 +56,15 @@ public class AssistanceServicesImplement implements AssistanceServices{
 
     @Override
     public Assistance getByIdAssistance(String tuition) {
+        Assistance assistance = null;
         connection = DAO.getConnection();
         try {
-            ps = connection.prepareStatement("SELECT nameAssistance FROM Assists WHERE idStudent = ?");
+            ps = connection.prepareStatement("SELECT * FROM Assists WHERE idStudent = ?");
             ps.setString(1, tuition);
             rs = ps.executeQuery();
             while(rs.next()) {
-                loadAssistance(rs.getString("nameAssistance"));
+                assistance = new Assistance(rs.getString("assistanceInAcademicCounseling"), rs.getString("psychologyAssistance"),
+                rs.getString("medicalServiceAssistance"), rs.getString("assistanceInSocialService"));
             }
             DAO.close(connection, ps, rs);
         } catch (SQLException e) {
@@ -83,17 +88,6 @@ public class AssistanceServicesImplement implements AssistanceServices{
         }catch(SQLException e){
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "Error {0}", e.getMessage());
         }
-    }
-
-    private void loadAssistance(String assistance1){
-        if (assistance1.equals("Asistencia en Consejería Académica"))
-            assistance.setAssistanceInAcademicCounseling(assistance1);
-        if(assistance1.equals("Asistencia Psicologica"))
-            assistance.setPsychologyAssistance(assistance1);
-        if(assistance1.equals("Asistencia Médica"))
-            assistance.setMedicalServiceAssistance(assistance1);
-        if(assistance1.equals("Asistencia en Servicio Social"))
-            assistance.setAssistanceInSocialService(assistance1);
     }
 }
 

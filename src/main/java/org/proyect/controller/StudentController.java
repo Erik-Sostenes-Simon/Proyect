@@ -34,7 +34,7 @@ public class StudentController implements Initializable {
         lblGroup.setText(student.getGroup());
         lblGrade.setText(String.valueOf(student.getGrade()));
         lblTuition.setText(student.getTuition());
-        lblTotalAverage.setText(String.valueOf(student.getTotalAverage()));
+        lblTotalAverage.setText(String.format("%.2f", student.getTotalAverage()));
         lblCanalization.setText(String.valueOf(student.getCanalization()));
         lblCounseling.setText(validateAssistance(student.getAssistance().getAssistanceInAcademicCounseling()));
         lblPsychology.setText(validateAssistance(student.getAssistance().getPsychologyAssistance()));
@@ -43,7 +43,7 @@ public class StudentController implements Initializable {
         txtReasonForDisapproval.setText(student.getReasonForDisapproval());
     }
     private String validateAssistance(String assistance) {
-        return assistance == null ? "NO" :"SI";
+        return assistance.isBlank() ? "NO" : "SI";
     }
     public void editStudent(ActionEvent event) throws IOException {
         FXMLLoader loader = App.loadFXMlView("dialogStudent");

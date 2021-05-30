@@ -1,7 +1,5 @@
 package org.proyect.model;
 
-import java.util.List;
-
 public class Student {
     private String tuition;
     private String nameStudent;
@@ -114,15 +112,13 @@ public class Student {
     }
     @Override
     public String toString() {
-        return "Student{" +
-                "tuition='" + tuition + '\'' +
-                ", nameStudent='" + nameStudent + '\'' +
-                ", reasonForDisapproval='" + reasonForDisapproval + '\'' +
-                ", totalAverage=" + totalAverage +
-                ", canalization=" + canalization +
-                ", group='" + group + '\'' +
-                ", grade=" + grade +
-                ", idManager='\n" + idManager + '\'' +
-                '}';
+        return tuition + ","+
+                nameStudent + "," +
+                reasonForDisapproval + "," +
+                totalAverage +","+
+                canalization +","+
+                group + "," +
+                grade + ","+
+                idManager;
     }
 }

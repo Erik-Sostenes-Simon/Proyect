@@ -66,13 +66,13 @@ public class StudentServicesImplement implements StudentServices {
     }
 
     @Override
-    public void updateStudent(String enrollment, Student student) throws SQLException {
+    public void updateStudent(String tuition, Student student) throws SQLException {
         if(student == null)
             throw new RuntimeException("Student cannot be null");
 
         connection = DAO.getConnection();
         try {
-            ps = connection.prepareStatement("UPDATE Students SET idStudent=?, nameStudent=?, reasonForDisapproval=?, totalAverage=?, canalization=?, groupS=?, grade=?, idManager=? WHERE idStudent=?");
+            ps = connection.prepareStatement("UPDATE Students SET idStudent=?, nameStudent=?, reasonForDisapproval=?, totalAverage=?, canalization=?, groupS=?, grade=? WHERE idStudent=?");
             ps.setString(1, student.getTuition());
             ps.setString(2, student.getNameStudent());
             ps.setString(3, student.getReasonForDisapproval());
@@ -80,8 +80,7 @@ public class StudentServicesImplement implements StudentServices {
             ps.setBoolean(5, student.getCanalization());
             ps.setString(6, student.getGroup());
             ps.setInt(7, student.getGrade());
-            ps.setString(8, student.getIdManager());
-            ps.setString(9, student.getTuition());
+            ps.setString(8, tuition);
             int result = ps.executeUpdate();
 
             if(result > 0)

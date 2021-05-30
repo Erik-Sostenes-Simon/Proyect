@@ -82,7 +82,7 @@
             </HBox>
          </children>
       </Pane>
-      <HBox alignment="CENTER" prefHeight="39.0" prefWidth="633.0" spacing="80.0" style="-fx-background-color: #A569BD;">
+      <HBox prefHeight="39.0" prefWidth="633.0" spacing="80.0" style="-fx-background-color: #A569BD;">
          <children>
             <Label textFill="#e7e5e5">
                <HBox.margin>
@@ -91,7 +91,7 @@
             </Label>
             <Label text="Asesorias" textFill="#e7e5e5">
                <HBox.margin>
-                  <Insets />
+                  <Insets left="70.0" />
                </HBox.margin>
             </Label>
             <Label text="Atención Psicologica" textFill="#e7e5e5">
